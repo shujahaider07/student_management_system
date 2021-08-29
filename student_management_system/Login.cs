@@ -73,5 +73,11 @@ namespace student_management_system
 
 
         }
+
+        private void passwordtxt_TextChanged(object sender, EventArgs e)
+        {
+            passwordtxt.PasswordChar = '*';
+
+        }
     }
     }
