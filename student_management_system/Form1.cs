@@ -41,7 +41,25 @@ namespace student_management_system
             teachertxt.KeyUp += Teachertxt_KeyUp;
             startdatetxt.KeyUp += Startdatetxt_KeyUp;
             enddatetxt.KeyUp += Enddatetxt_KeyUp;
+            aduser.KeyUp += Aduser_KeyUp;
+            adpass.KeyUp += Adpass_KeyUp;
 
+        }
+
+        private void Adpass_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) {
+
+                button16.Focus();
+            }
+        }
+
+        private void Aduser_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) {
+                adpass.Focus();
+            
+            }
         }
 
         private void Enddatetxt_KeyUp(object sender, KeyEventArgs e)
@@ -310,7 +328,7 @@ namespace student_management_system
             }
             else
             {
-                e.Handled = true;
+                e.Handled =  true;
                 MessageBox.Show("Invalid value");
 
             }
@@ -738,6 +756,10 @@ namespace student_management_system
             if (dr.HasRows == true)
             {
                 MessageBox.Show("Login Adminstrator form");
+                ADMIN a = new ADMIN();
+                a.Show();
+                aduser.Text = "";
+                adpass.Text = "";
 
             }
             else
@@ -894,6 +916,11 @@ namespace student_management_system
         private void yearstxt_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void adpass_TextChanged(object sender, EventArgs e)
+        {
+            adpass.PasswordChar = '●';
         }
     }
 }

@@ -76,8 +76,18 @@ namespace student_management_system
 
         private void passwordtxt_TextChanged(object sender, EventArgs e)
         {
-            passwordtxt.PasswordChar = '*';
+            passwordtxt.PasswordChar = '●';
 
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
     }

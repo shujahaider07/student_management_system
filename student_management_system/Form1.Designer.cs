@@ -131,12 +131,9 @@ namespace student_management_system
             this.cfeestxt = new System.Windows.Forms.TextBox();
             this.durationtxt = new System.Windows.Forms.TextBox();
             this.button15 = new System.Windows.Forms.Button();
-            this.panel8 = new System.Windows.Forms.Panel();
             this.aduser = new System.Windows.Forms.TextBox();
-            this.label42 = new System.Windows.Forms.Label();
             this.button16 = new System.Windows.Forms.Button();
             this.adpass = new System.Windows.Forms.TextBox();
-            this.label43 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -176,6 +173,14 @@ namespace student_management_system
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label60 = new System.Windows.Forms.Label();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.label61 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.label63 = new System.Windows.Forms.Label();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -192,7 +197,6 @@ namespace student_management_system
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -206,6 +210,11 @@ namespace student_management_system
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.panel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            this.panel15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -401,7 +410,7 @@ namespace student_management_system
             this.tabPage3.Controls.Add(this.panel5);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1224, 593);
+            this.tabPage3.Size = new System.Drawing.Size(1111, 544);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Student Fees";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -413,7 +422,7 @@ namespace student_management_system
             this.tabPage4.Controls.Add(this.panel7);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1224, 593);
+            this.tabPage4.Size = new System.Drawing.Size(1111, 544);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Add Course";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -453,10 +462,10 @@ namespace student_management_system
             // 
             // tabPage9
             // 
-            this.tabPage9.Controls.Add(this.panel8);
+            this.tabPage9.Controls.Add(this.panel15);
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(1224, 593);
+            this.tabPage9.Size = new System.Drawing.Size(1111, 544);
             this.tabPage9.TabIndex = 8;
             this.tabPage9.Text = "Administrator";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -1306,59 +1315,39 @@ namespace student_management_system
             this.button15.UseVisualStyleBackColor = false;
             this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.button16);
-            this.panel8.Controls.Add(this.label43);
-            this.panel8.Controls.Add(this.adpass);
-            this.panel8.Controls.Add(this.aduser);
-            this.panel8.Controls.Add(this.label42);
-            this.panel8.Location = new System.Drawing.Point(293, 91);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(337, 324);
-            this.panel8.TabIndex = 0;
-            // 
             // aduser
             // 
-            this.aduser.Location = new System.Drawing.Point(115, 60);
+            this.aduser.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.aduser.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aduser.Location = new System.Drawing.Point(315, 177);
             this.aduser.Name = "aduser";
-            this.aduser.Size = new System.Drawing.Size(122, 20);
+            this.aduser.Size = new System.Drawing.Size(288, 24);
             this.aduser.TabIndex = 0;
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(29, 63);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(68, 13);
-            this.label42.TabIndex = 1;
-            this.label42.Text = "USERNAME";
             // 
             // button16
             // 
-            this.button16.Location = new System.Drawing.Point(140, 198);
+            this.button16.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.button16.FlatAppearance.BorderSize = 0;
+            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button16.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button16.ForeColor = System.Drawing.Color.White;
+            this.button16.Location = new System.Drawing.Point(435, 277);
             this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(75, 23);
+            this.button16.Size = new System.Drawing.Size(97, 36);
             this.button16.TabIndex = 2;
             this.button16.Text = "LOGIN";
-            this.button16.UseVisualStyleBackColor = true;
+            this.button16.UseVisualStyleBackColor = false;
             this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // adpass
             // 
-            this.adpass.Location = new System.Drawing.Point(115, 130);
+            this.adpass.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.adpass.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adpass.Location = new System.Drawing.Point(315, 224);
             this.adpass.Name = "adpass";
-            this.adpass.Size = new System.Drawing.Size(122, 20);
+            this.adpass.Size = new System.Drawing.Size(288, 24);
             this.adpass.TabIndex = 2;
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(29, 135);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(70, 13);
-            this.label43.TabIndex = 3;
-            this.label43.Text = "PASSWORD";
+            this.adpass.TextChanged += new System.EventHandler(this.adpass_TextChanged);
             // 
             // panel9
             // 
@@ -1778,6 +1767,90 @@ namespace student_management_system
             this.label60.TabIndex = 6;
             this.label60.Text = "search:";
             // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.Color.White;
+            this.panel15.Controls.Add(this.pictureBox5);
+            this.panel15.Controls.Add(this.button16);
+            this.panel15.Controls.Add(this.pictureBox6);
+            this.panel15.Controls.Add(this.label61);
+            this.panel15.Controls.Add(this.label62);
+            this.panel15.Controls.Add(this.adpass);
+            this.panel15.Controls.Add(this.aduser);
+            this.panel15.Controls.Add(this.pictureBox7);
+            this.panel15.Controls.Add(this.label63);
+            this.panel15.Controls.Add(this.pictureBox8);
+            this.panel15.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel15.Location = new System.Drawing.Point(135, 85);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(666, 382);
+            this.panel15.TabIndex = 10;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(565, 215);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(32, 35);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 12;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(563, 168);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(32, 35);
+            this.pictureBox6.TabIndex = 11;
+            this.pictureBox6.TabStop = false;
+            // 
+            // label61
+            // 
+            this.label61.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label61.Location = new System.Drawing.Point(315, 250);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(288, 2);
+            this.label61.TabIndex = 10;
+            // 
+            // label62
+            // 
+            this.label62.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label62.Location = new System.Drawing.Point(315, 203);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(288, 2);
+            this.label62.TabIndex = 9;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(315, 42);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(266, 114);
+            this.pictureBox7.TabIndex = 8;
+            this.pictureBox7.TabStop = false;
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label63.Location = new System.Drawing.Point(85, 77);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(169, 24);
+            this.label63.TabIndex = 7;
+            this.label63.Text = "ADMINISTRATION";
+            this.label63.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+            this.pictureBox8.Location = new System.Drawing.Point(67, 106);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(200, 190);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 6;
+            this.pictureBox8.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1827,8 +1900,6 @@ namespace student_management_system
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel10.ResumeLayout(false);
@@ -1848,6 +1919,12 @@ namespace student_management_system
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            this.panel15.ResumeLayout(false);
+            this.panel15.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1955,12 +2032,9 @@ namespace student_management_system
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Label label43;
         private System.Windows.Forms.TextBox adpass;
         private System.Windows.Forms.TextBox aduser;
-        private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.Label label44;
@@ -2000,6 +2074,14 @@ namespace student_management_system
         private System.Windows.Forms.Label label60;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.PictureBox pictureBox8;
     }
 }
 
