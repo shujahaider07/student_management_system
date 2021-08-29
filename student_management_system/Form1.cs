@@ -25,8 +25,53 @@ namespace student_management_system
             coursesearchtxt.TextChanged += Coursesearchtxt_TextChanged;
             teachersearchtxt.TextChanged += Teachersearchtxt_TextChanged;
             stdaddtxt.TextChanged += Stdaddtxt_TextChanged;
-
+            nametxt.KeyUp += Nametxt_KeyUp;
+            pincodetxt.KeyUp += Pincodetxt_KeyUp;
+            emailtxt.KeyUp += Emailtxt_KeyUp;
+            contacttxt.KeyUp += Contacttxt_KeyUp;
+            addresstxt.KeyUp += Addresstxt_KeyUp;
         }
+
+        private void Addresstxt_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button9.Focus();
+            }
+        }
+
+        private void Contacttxt_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                addresstxt.Focus();
+            }
+        }
+
+        private void Emailtxt_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                contacttxt.Focus();
+            }
+        }
+
+        private void Pincodetxt_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                emailtxt.Focus();
+            }
+        }
+
+        private void Nametxt_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode==Keys.Enter)
+            {
+                pincodetxt.Focus();
+            }
+        }
+
         SqlConnection sql = new SqlConnection(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=universityportal;Integrated Security=True");
         private void Stdaddtxt_KeyUp(object sender, KeyEventArgs e)
         {
@@ -173,7 +218,54 @@ namespace student_management_system
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            label2.Text = DateTime.Now.ToString();
+            sql.Open();
+            string qry = "select count (cid) from course";
+            SqlCommand cmd = new SqlCommand(qry, sql);
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
 
+                label45.Text = reader[0].ToString();
+
+            }
+          
+            sql.Close();
+
+
+            sql.Open();
+            string qry1 = "select count (id) from students";
+            SqlCommand cmdd = new SqlCommand(qry1, sql);
+            SqlDataReader readerr = cmdd.ExecuteReader();
+            while (readerr.Read())
+            {
+
+                label46.Text = readerr[0].ToString();
+
+            }
+            sql.Close();
+
+
+            sql.Open();
+            string qry2 = "select count (id) from TEACHER";
+            SqlCommand cmd2 = new SqlCommand(qry2, sql);
+            SqlDataReader reader1 = cmd2.ExecuteReader();
+            while (reader1.Read())
+            {
+
+                label48.Text = reader1[0].ToString();
+
+            }
+            sql.Close(); 
+
+
+
+
+
+
+
+
+            nametxt.Focus();
             fetchcourse();
             fetchyear();
             fetchteacher();
@@ -222,6 +314,7 @@ namespace student_management_system
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            nametxt.Focus();
             tabControl1.Visible = true;
             tabControl1.SelectTab(0);
 
@@ -302,7 +395,7 @@ namespace student_management_system
 
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
-
+            
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -369,7 +462,7 @@ namespace student_management_system
 
             db.con.Open();
             string qry = "update  students set  feespaid = '"+stdpaidtxt.Text+"',feesrem = '"+stdremtxt.Text+"' where id = '"+idtxt.Text+"'";
-              SqlCommand cmd = new SqlCommand(qry, db.con);
+             SqlCommand cmd = new SqlCommand(qry, db.con);
             cmd.ExecuteNonQuery();
             MessageBox.Show("fees paid");
 
@@ -422,27 +515,28 @@ namespace student_management_system
         
         private void button15_Click(object sender, EventArgs e)
         {
+            
             sql.Open();
-            SqlCommand cmdd = new SqlCommand("Select coursename from course where coursename = '" + cnametxt.Text + "'");
+            SqlCommand cmdd = new SqlCommand("Select coursename from course where coursename = '" + cnametxt.Text + "'",sql);
             SqlDataReader dr = cmdd.ExecuteReader();
           
             if (dr.HasRows) {
                 MessageBox.Show("record already exists");
-                
+               
             }
            
             else  {
 
-                sql.Open();
+                db.con.Open();
                 string qry = "insert into course(coursename,coursefees,duration)values('" + cnametxt.Text + "','" + cfeestxt.Text + "','" + durationtxt.Text + "')";
-                SqlCommand cmd = new SqlCommand(qry, db.con);
+                SqlCommand cmd = new SqlCommand(qry,db.con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("COURSE ADDED");
-                sql.Close();
+                db.con.Close();
             }
+
+
             sql.Close();
-
-
         }
 
 
@@ -457,6 +551,74 @@ namespace student_management_system
         }
 
         private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            db.con.Open();
+            string qry = "select * from admintrator where aduser = @User and adpassword = @Pass";
+            SqlCommand cmd = new SqlCommand(qry,db.con);
+            cmd.Parameters.AddWithValue("@User",aduser.Text);
+            cmd.Parameters.AddWithValue("@Pass", adpass.Text);
+            SqlDataReader dr = cmd.ExecuteReader();
+            
+            
+            if (dr.HasRows == true)
+            {
+                MessageBox.Show("Login Adminstrator form");
+
+            }
+            else
+            {
+                MessageBox.Show("Failed");
+            }
+
+
+                         
+
+
+
+
+
+            db.con.Close();
+
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void nametxt_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void label45_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            tabControl1.Visible = false;
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+           
+            Application.Exit();
+        }
+
+        private void panel12_Paint(object sender, PaintEventArgs e)
         {
 
         }

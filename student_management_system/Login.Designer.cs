@@ -92,7 +92,6 @@ namespace student_management_system
             this.Controls.Add(this.loginbtn);
             this.Controls.Add(this.label1);
             this.Name = "Login";
-            this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
