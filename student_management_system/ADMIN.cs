@@ -54,13 +54,59 @@ namespace student_management_system
 
         private void button6_Click(object sender, EventArgs e)
         {
+
+            
             sql.Open();
-            string qry = "select id,studentname,addresss,email,fees,feespaid,contactno,course,college,feesrem,YEARr,teacher,startdate,enddate from students where id = '" + sidtxt.Text + "'";
+            string qry = "select id,studentname,addresss,email,fees,feespaid,contactno,course,college,feesrem,YEARr,teacher,startdate,enddate from students where id = '" + sidtxt.Text + "' and  statuss is null ";
             SqlDataAdapter da = new SqlDataAdapter(qry, sql);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.Visible = true;
             dataGridView1.DataSource = dt;
+
+
+
+            sql.Close();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+            DialogResult dr = MessageBox.Show("Are you sure to delete row?", "Confirmation", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                //delete row from database or datagridview...
+                sql.Open();
+                string qry = "update students set statuss = 0 where id = '" + sidtxt.Text + "'";
+                SqlCommand cmd = new SqlCommand(qry, sql);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Record deleted");
+                dataGridView1.Visible = false;
+            }
+            else if (DialogResult == DialogResult.No)
+            {
+                
+            }
+
+
+          
+
+
+
+
+
+            sql.Close();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            sql.Open();
+            string qry = "select TEACHERNAME,QUALIFICATION,SUBJECT where id = '" + tidtxt.Text + "'  ";
+            SqlDataAdapter da = new SqlDataAdapter(qry, sql);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView2.Visible = true;
+            dataGridView2.DataSource = dt;
 
 
 
