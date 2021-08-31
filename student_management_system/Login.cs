@@ -64,10 +64,6 @@ namespace student_management_system
             }
 
 
-
-
-
-
           db.con.Close();
 
 

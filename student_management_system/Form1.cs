@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Web;
 
 namespace student_management_system
 {
@@ -19,7 +20,7 @@ namespace student_management_system
 
             idtxt.KeyUp += Idtxt_KeyUp;
             stdaddtxt.KeyUp += Stdaddtxt_KeyUp;
-            
+
             button10.KeyUp += Button10_KeyUp;
             yearstxt.KeyUp += Yearstxt_KeyUp;
             yearstxt.TextChanged += Yearstxt_TextChanged;
@@ -29,8 +30,8 @@ namespace student_management_system
             stdaddtxt.TextChanged += Stdaddtxt_TextChanged;
             nametxt.KeyUp += Nametxt_KeyUp;
             contacttxt.KeyUp += Contacttxt_KeyUp1;
-            
-            
+
+
             emailtxt.KeyUp += Emailtxt_KeyUp;
             contacttxt.KeyUp += Contacttxt_KeyUp;
             addresstxt.KeyUp += Addresstxt_KeyUp;
@@ -57,12 +58,30 @@ namespace student_management_system
             durationtxt.KeyUp += Durationtxt_KeyUp;
             tnametxt.KeyUp += Tnametxt_KeyUp;
             tqualitxt.KeyUp += Tqualitxt_KeyUp;
+            yeartxt.KeyUp += Yeartxt_KeyUp;
+            subjectxt.KeyUp += Subjectxt_KeyUp;
 
+        }
+
+        private void Subjectxt_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode==Keys.Enter)
+            {
+                button19.Focus();
+            }
+        }
+
+        private void Yeartxt_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                enddatetxt.Focus();
+            }
         }
 
         private void Tqualitxt_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode==Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 subjectxt.Focus();
             }
@@ -70,7 +89,7 @@ namespace student_management_system
 
         private void Tnametxt_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode==Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 tqualitxt.Focus();
             }
@@ -78,7 +97,7 @@ namespace student_management_system
 
         private void Durationtxt_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode==Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 button15.Focus();
             }
@@ -86,7 +105,7 @@ namespace student_management_system
 
         private void Cfeestxt_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode==Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 durationtxt.Focus();
             }
@@ -94,7 +113,7 @@ namespace student_management_system
 
         private void Cnametxt_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode==Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 cfeestxt.Focus();
             }
@@ -102,7 +121,7 @@ namespace student_management_system
 
         private void Contacttxt_KeyUp1(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode==Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 emailtxt.Focus();
             }
@@ -118,7 +137,7 @@ namespace student_management_system
 
         private void Searchfeestxt_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode==Keys.Escape)
+            if (e.KeyCode == Keys.Escape)
             {
                 panel14.Visible = false;
             }
@@ -196,7 +215,7 @@ namespace student_management_system
         {
             if (e.KeyCode == Keys.Enter)
             {
-                enddatetxt.Focus();
+                yeartxt.Focus();
             }
         }
 
@@ -250,7 +269,6 @@ namespace student_management_system
                 panel14.Visible = false;
                 panel6.Visible = true;
 
-
                 idtxt.Text = dataGridView4.CurrentRow.Cells[0].Value.ToString();
                 stdnametxt.Text = dataGridView4.CurrentRow.Cells[1].Value.ToString();
                 stdcoursetxt.Text = dataGridView4.CurrentRow.Cells[7].Value.ToString();
@@ -260,6 +278,8 @@ namespace student_management_system
                 stdemailtxt.Text = dataGridView4.CurrentRow.Cells[2].Value.ToString();
                 stdcollegetxt.Text = dataGridView4.CurrentRow.Cells[8].Value.ToString();
                 stdmobtxt.Text = dataGridView4.CurrentRow.Cells[6].Value.ToString();
+
+
             }
 
         }
@@ -303,21 +323,21 @@ namespace student_management_system
         {
             if (e.KeyCode == Keys.Enter)
             {
-               addresstxt.Focus();
+                addresstxt.Focus();
             }
         }
 
-       
+
 
         private void Nametxt_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-               contacttxt.Focus();
+                contacttxt.Focus();
             }
         }
 
-        SqlConnection sql = new SqlConnection( "Data Source=localhost\\SQLEXPRESS;Initial Catalog=universityportal;Integrated Security=True");
+        SqlConnection sql = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=universityportal;Integrated Security=True");
         private void Stdaddtxt_KeyUp(object sender, KeyEventArgs e)
         {
 
@@ -393,7 +413,7 @@ namespace student_management_system
 
 
 
-            
+
         }
 
         private void Yearstxt_TextChanged(object sender, EventArgs e)
@@ -401,7 +421,7 @@ namespace student_management_system
             db.con.Open();
             if (yearstxt.Text == "ALL")
             {
-                string qry1 = "select *  from students";
+                string qry1 = "select *  from students where statuss is null";
                 SqlDataAdapter da1 = new SqlDataAdapter(qry1, db.con);
                 DataTable dt1 = new DataTable();
                 da1.Fill(dt1);
@@ -413,7 +433,7 @@ namespace student_management_system
             else
             {
 
-                string qry = "select * from students where yearr = '" + yearstxt.Text + "'";
+                string qry = "select * from students where yearr = '" + yearstxt.Text + "' and statuss is null";
                 SqlDataAdapter da = new SqlDataAdapter(qry, db.con);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -457,11 +477,44 @@ namespace student_management_system
 
         private void button9_Click(object sender, EventArgs e)
         {
-            panel4.Enabled = true;
+
+            if (string.IsNullOrEmpty(contacttxt.Text))
+            {
+                MessageBox.Show("Fill properly");
+                star1.Visible = true;
+                star2.Visible = true;
+                panel4.Enabled = false;
+
+            }
+            else if (string.IsNullOrEmpty(nametxt.Text))
+
+
+            {
+                MessageBox.Show("Fill properly");
+                star1.Visible = true;
+                star2.Visible = true;
+                panel4.Enabled = false;
+
+            }
+
+
+            else
+            {
+                panel4.Enabled = true;
+
+            }
+
+
+
+
+
         }
 
         public void fetchcourse()
         {
+
+            coursesearchtxt.Items.Clear();
+
             sql.Open();
             string Sqll = "select coursename from course group by coursename";
 
@@ -481,7 +534,7 @@ namespace student_management_system
         public void stdgrid()
         {
             sql.Open();
-            string qry = "select  id,studentname,email,fees,feespaid,feesrem,contactno,course,college  from students";
+            string qry = "select  id,studentname,email,fees,feespaid,feesrem,contactno,course,college  from students where statuss is null";
             SqlDataAdapter da = new SqlDataAdapter(qry, sql);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -491,21 +544,53 @@ namespace student_management_system
 
         }
 
+
+        public void comboteacher() {
+
+            sql.Open();
+            string Sqll = "select teachername from teacher";
+
+            SqlCommand cmdd = new SqlCommand(Sqll, sql);
+            SqlDataReader DRR = cmdd.ExecuteReader();
+
+            while (DRR.Read())
+            {
+                teachertxt.Items.Add(DRR[0]);
+
+            }
+
+            sql.Close();
+
+        }
+
+
+
+
         private void Form1_Load(object sender, EventArgs e)
         {
-           
+            
+            yeartxt.Text = "2021";
+
+            String[] arr = {"2021","2022","2023","2024"};
+            foreach (string item in arr)
+            {
+                yeartxt.Items.Add(item);
+            }
+
 
             label2.Text = DateTime.Now.ToString();
             nametxt.Focus();
-            course();
-            
-            fetchcourse();
+
+
             fetchyear();
+            course();
+            fetchcourse();
             fetchteacher();
             courses();
             teacher();
             stdgrid();
             countall();
+            comboteacher();
 
             tabControl1.Visible = false;
 
@@ -525,6 +610,7 @@ namespace student_management_system
 
         public void course()
         {
+
 
             sql.Open();
             string Sqll = "select coursename from course group by coursename";
@@ -559,7 +645,7 @@ namespace student_management_system
         {
 
             sql.Open();
-            string Sql = "select yearr from students group by yearr";
+            string Sql = "select yearr from students  where statuss is null group by yearr";
 
             SqlCommand cmd = new SqlCommand(Sql, sql);
             SqlDataReader DR = cmd.ExecuteReader();
@@ -612,17 +698,7 @@ namespace student_management_system
                 string start = startdatetxt.Text;
                 string end = enddatetxt.Text;
 
-                //if (nametxt.Text == "" || emailtxt.Text == "" || pincodetxt.Text == "" || contacttxt.Text == "" ||
-                //    addresstxt.Text == "" || coursetxt.Text == "" || collegetxt.Text == "" ||
-                //     teachertxt.Text == "" || yearstxt.Text == "" || startdatetxt.Text == "" ||
-                //    enddatetxt.Text == "")
-                //{
-                //    MessageBox.Show("Fill All Requirements.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                //}
-
-                //else
-                //{
                 string qry = "insert into students(studentname,addresss,contactno,email,college,course,fees,teacher,yearr,startdate,enddate) values ('" + nametxt.Text + "','" + addresstxt.Text + "','" + contacttxt.Text + "','" + emailtxt.Text + "','" + collegetxt.Text + "','" + coursetxt.Text + "','" + feestxt.Text + "','" + teachertxt.Text + "','" + yeartxt.Text + "','" + start + "','" + end + "')";
                 SqlCommand cmd = new SqlCommand(qry, sql);
                 cmd.ExecuteNonQuery();
@@ -630,12 +706,40 @@ namespace student_management_system
                 label5.Visible = true;
                 label5.Text = "STUDENT ADDED SUCCESSFULLY...!!";
                 sql.Close();
+                star1.Visible = false;
+                star2.Visible = false;
+                clear();
+                ClearTextForm1();
+
+                countall();
+
+
             }
+
             catch (Exception)
             {
 
             }
+
+
         }
+        public void clear()
+        {
+            nametxt.Text = "";
+            emailtxt.Text = "";
+            contacttxt.Text = "";
+            addresstxt.Text = "";
+            coursetxt.Text = "";
+            collegetxt.Text = "";
+            feestxt.Text = "";
+            teachertxt.Text = "";
+            startdatetxt.Text = "";
+            enddatetxt.Text = "";
+            yeartxt.Text = "";
+
+
+        }
+
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -653,7 +757,7 @@ namespace student_management_system
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
+
             tabControl1.Visible = true;
             tabControl1.SelectTab(3);
         }
@@ -698,7 +802,7 @@ namespace student_management_system
             if (idtxt.Text == "")
             {
 
-                MessageBox.Show("invalid");
+                MessageBox.Show("Invalid");
                 panel6.Visible = false;
             }
             else
@@ -706,24 +810,34 @@ namespace student_management_system
 
                 panel6.Visible = true;
 
-                db.con.Open();
-                string qry = "select * from students where id = '" + idtxt.Text + "' ";
-                SqlDataAdapter da = new SqlDataAdapter(qry, db.con);
+                sql.Open();
+
+                try {
+
+                    string qry = "select id,studentname, addresss, contactno, email, college, course, fees,feesrem,feespaid  from students where id = '" + idtxt.Text + "' and statuss is null "; 
+                    SqlDataAdapter da = new SqlDataAdapter(qry, db.con);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
-                stdnametxt.Text = dt.Rows[0][1].ToString();
-                stdemailtxt.Text = dt.Rows[0][5].ToString();
-                stdmobtxt.Text = dt.Rows[0][4].ToString();
-                stdcoursetxt.Text = dt.Rows[0][7].ToString();
-                stdfeestxt.Text = dt.Rows[0][8].ToString();
-                stdcollegetxt.Text = dt.Rows[0][6].ToString();
-                stdpaidtxt.Text = dt.Rows[0][9].ToString();
-                stdremtxt.Text = dt.Rows[0][10].ToString();
-
-                db.con.Close();
-
+                stdnametxt.Text = dt.Rows[0]["studentname"].ToString();
+                stdemailtxt.Text = dt.Rows[0]["email"].ToString();
+                stdmobtxt.Text = dt.Rows[0]["contactno"].ToString();
+                stdcoursetxt.Text = dt.Rows[0]["course"].ToString();
+                stdfeestxt.Text = dt.Rows[0]["fees"].ToString();
+                stdcollegetxt.Text = dt.Rows[0]["college"].ToString();
+                    stdpaidtxt.Text = dt.Rows[0]["feespaid"].ToString();
+                    stdremtxt.Text = dt.Rows[0]["feesrem"].ToString();
+                    panel6.Visible = true;
             }
+            catch (Exception)
+            {
+                MessageBox.Show("RECORD NOT FOUND!");
+            }
+
+
+
+            sql.Close();
+        }
 
         }
         private void stdfeestxt_TextChanged(object sender, EventArgs e)
@@ -740,7 +854,7 @@ namespace student_management_system
         {
 
             db.con.Open();
-            string qry = "update  students set  feespaid = '" + stdpaidtxt.Text + "',feesrem = '" + stdremtxt.Text + "' where id = '" + idtxt.Text + "' or contactno = '"+contxt.Text+"'" ;
+            string qry = "update  students set  feespaid = '" + stdpaidtxt.Text + "',feesrem = '" + stdremtxt.Text + "' where id = '" + idtxt.Text + "' or contactno = '" + contxt.Text + "'";
 
             SqlCommand cmd = new SqlCommand(qry, db.con);
             cmd.ExecuteNonQuery();
@@ -821,6 +935,10 @@ namespace student_management_system
             }
 
             sql.Close();
+
+            courses(); 
+            fetchcourse();
+            countall();
         }
 
         private void coursesearchtxt_SelectedIndexChanged(object sender, EventArgs e)
@@ -830,7 +948,7 @@ namespace student_management_system
 
         private void panel7_Paint(object sender, PaintEventArgs e)
         {
-            cnametxt.Focus();
+           // cnametxt.Focus();
         }
 
         private void button16_Click(object sender, EventArgs e)
@@ -874,12 +992,13 @@ namespace student_management_system
         {
 
         }
-            
+
         private void label2_Click(object sender, EventArgs e)
         {
 
         }
-        public void countall() {
+        public void countall()
+        {
             sql.Open();
             string qry = "select count (cid) from course";
             SqlCommand cmd = new SqlCommand(qry, sql);
@@ -894,7 +1013,7 @@ namespace student_management_system
             sql.Close();
 
             sql.Open();
-            string qry1 = "select count (id) from students";
+            string qry1 = "select count (id) from students where statuss is null";
             SqlCommand cmdd = new SqlCommand(qry1, sql);
             SqlDataReader readerr = cmdd.ExecuteReader();
             while (readerr.Read())
@@ -917,7 +1036,7 @@ namespace student_management_system
             }
             sql.Close();
 
-            
+
 
         }
 
@@ -940,6 +1059,8 @@ namespace student_management_system
 
         private void button19_Click(object sender, EventArgs e)
         {
+
+            feessearchtxt.Items.Clear();
             sql.Open();
             string qry = "insert into teacher values('" + tnametxt.Text + "','" + tqualitxt.Text + "','" + subjectxt.Text + "')";
             SqlCommand cmd = new SqlCommand(qry, sql);
@@ -951,7 +1072,9 @@ namespace student_management_system
             subjectxt.Text = "";
 
             sql.Close();
-
+            fetchteacher();
+            countall();
+            teacher();
         }
 
         private void idtxt_TextChanged(object sender, EventArgs e)
@@ -1045,25 +1168,26 @@ namespace student_management_system
 
 
 
-                string qry = "select * from students where contactno = '" + contxt.Text + "' ";
+                string qry = "select id,studentname, addresss, contactno, email, college, course, fees  from students where contactno = '" + contxt.Text + "' and statuss is null ";
                 SqlDataAdapter da = new SqlDataAdapter(qry, db.con);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
-                stdnametxt.Text = dt.Rows[0][1].ToString();
-                stdemailtxt.Text = dt.Rows[0][5].ToString();
-                stdmobtxt.Text = dt.Rows[0][4].ToString();
-                stdcoursetxt.Text = dt.Rows[0][7].ToString();
-                stdfeestxt.Text = dt.Rows[0][8].ToString();
-                stdcollegetxt.Text = dt.Rows[0][6].ToString();
-                stdpaidtxt.Text = dt.Rows[0][9].ToString();
-                stdremtxt.Text = dt.Rows[0][10].ToString();
+                stdnametxt.Text = dt.Rows[0]["studentname"].ToString();
+                stdemailtxt.Text = dt.Rows[0]["email"].ToString();
+                stdmobtxt.Text = dt.Rows[0]["contactno"].ToString();
+                stdcoursetxt.Text = dt.Rows[0]["course"].ToString();
+                stdfeestxt.Text = dt.Rows[0]["fees"].ToString();
+                stdcollegetxt.Text = dt.Rows[0]["college"].ToString();
+                //stdpaidtxt.Text = dt.Rows[0][9].ToString();
+                //stdremtxt.Text = dt.Rows[0][10].ToString();
                 panel6.Visible = true;
             }
-            catch (Exception) {
+            catch (Exception)
+            {
                 MessageBox.Show("RECORD NOT FOUND!");
             }
-           
+
 
 
             sql.Close();
@@ -1072,16 +1196,17 @@ namespace student_management_system
 
         private void studentnametxt_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Down) {
+            if (e.KeyCode == Keys.Down)
+            {
 
                 dataGridView1.Focus();
-            
+
             }
         }
 
         private void button21_Click(object sender, EventArgs e)
         {
-            
+
             countall();
         }
 
@@ -1092,12 +1217,79 @@ namespace student_management_system
 
         private void cnametxt_TextChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void panel13_Paint(object sender, PaintEventArgs e)
         {
-            tnametxt.Focus();
+           // tnametxt.Focus();
+        }
+
+        private void contacttxt_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+
+
+
+
+        }
+
+        private void emailtxt_TextChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+       
+
+        }
+
+        public void ClearTextForm1()
+        {
+            nametxt.Text = "";
+            contacttxt.Text = "";
+            emailtxt.Text = "";
+            addresstxt.Text = "";
+            coursetxt.Text = "";
+            collegetxt.Text = "";
+            feestxt.Text = "";
+            teachertxt.Text = "";
+            startdatetxt.Text = "";
+            enddatetxt.Text = "";
+            yeartxt.Text = "";
+        }
+
+        private void contacttxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (char.IsDigit(ch))
+            {
+                e.Handled = false;
+
+            }
+            else if (e.KeyChar == 8)
+            {
+                e.Handled = false;
+
+
+            }
+            else
+            {
+                e.Handled = true;
+            }
+            
+        }
+
+        private void dataGridView4_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
         }
     }
 

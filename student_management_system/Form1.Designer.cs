@@ -62,8 +62,9 @@ namespace student_management_system
             this.label11 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.star2 = new System.Windows.Forms.Label();
+            this.star1 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
-            this.contacttxt = new System.Windows.Forms.TextBox();
             this.addresstxt = new System.Windows.Forms.RichTextBox();
             this.emailtxt = new System.Windows.Forms.TextBox();
             this.nametxt = new System.Windows.Forms.TextBox();
@@ -184,6 +185,7 @@ namespace student_management_system
             this.label52 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
+            this.contacttxt = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -373,7 +375,8 @@ namespace student_management_system
             this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Controls.Add(this.tabPage9);
-            this.tabControl1.Location = new System.Drawing.Point(124, 120);
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Location = new System.Drawing.Point(115, 114);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1119, 570);
@@ -387,10 +390,10 @@ namespace student_management_system
             this.tabPage1.Controls.Add(this.panel4);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.panel3);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 27);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1111, 544);
+            this.tabPage1.Size = new System.Drawing.Size(1111, 539);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "New Student";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -455,10 +458,10 @@ namespace student_management_system
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(320, 188);
+            this.button8.Location = new System.Drawing.Point(321, 188);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(103, 36);
-            this.button8.TabIndex = 15;
+            this.button8.TabIndex = 14;
             this.button8.Text = "SUBMIT";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
@@ -468,61 +471,57 @@ namespace student_management_system
             this.yeartxt.FormattingEnabled = true;
             this.yeartxt.Location = new System.Drawing.Point(302, 120);
             this.yeartxt.Name = "yeartxt";
-            this.yeartxt.Size = new System.Drawing.Size(121, 21);
-            this.yeartxt.TabIndex = 14;
+            this.yeartxt.Size = new System.Drawing.Size(121, 26);
+            this.yeartxt.TabIndex = 12;
             // 
             // teachertxt
             // 
             this.teachertxt.FormattingEnabled = true;
-            this.teachertxt.Items.AddRange(new object[] {
-            "SHUJA",
-            "AQSA",
-            "FIZZA"});
             this.teachertxt.Location = new System.Drawing.Point(302, 75);
             this.teachertxt.Name = "teachertxt";
-            this.teachertxt.Size = new System.Drawing.Size(121, 21);
-            this.teachertxt.TabIndex = 13;
+            this.teachertxt.Size = new System.Drawing.Size(121, 26);
+            this.teachertxt.TabIndex = 10;
             // 
             // feestxt
             // 
             this.feestxt.Location = new System.Drawing.Point(302, 37);
             this.feestxt.Name = "feestxt";
-            this.feestxt.Size = new System.Drawing.Size(121, 20);
-            this.feestxt.TabIndex = 12;
+            this.feestxt.Size = new System.Drawing.Size(121, 24);
+            this.feestxt.TabIndex = 8;
             // 
             // enddatetxt
             // 
             this.enddatetxt.Location = new System.Drawing.Point(94, 155);
             this.enddatetxt.Name = "enddatetxt";
-            this.enddatetxt.Size = new System.Drawing.Size(121, 20);
-            this.enddatetxt.TabIndex = 10;
+            this.enddatetxt.Size = new System.Drawing.Size(121, 24);
+            this.enddatetxt.TabIndex = 13;
             // 
             // startdatetxt
             // 
             this.startdatetxt.Location = new System.Drawing.Point(94, 117);
             this.startdatetxt.Name = "startdatetxt";
-            this.startdatetxt.Size = new System.Drawing.Size(121, 20);
-            this.startdatetxt.TabIndex = 9;
+            this.startdatetxt.Size = new System.Drawing.Size(121, 24);
+            this.startdatetxt.TabIndex = 11;
             // 
             // collegetxt
             // 
             this.collegetxt.FormattingEnabled = true;
             this.collegetxt.Items.AddRange(new object[] {
+            "IBA",
             "SZABIST",
             "DEGREE COLLEGE",
-            "IBA",
-            "CITY "});
+            "CITY"});
             this.collegetxt.Location = new System.Drawing.Point(94, 70);
             this.collegetxt.Name = "collegetxt";
-            this.collegetxt.Size = new System.Drawing.Size(121, 21);
-            this.collegetxt.TabIndex = 8;
+            this.collegetxt.Size = new System.Drawing.Size(121, 26);
+            this.collegetxt.TabIndex = 9;
             // 
             // coursetxt
             // 
             this.coursetxt.FormattingEnabled = true;
             this.coursetxt.Location = new System.Drawing.Point(94, 33);
             this.coursetxt.Name = "coursetxt";
-            this.coursetxt.Size = new System.Drawing.Size(121, 21);
+            this.coursetxt.Size = new System.Drawing.Size(121, 26);
             this.coursetxt.TabIndex = 7;
             this.coursetxt.SelectedIndexChanged += new System.EventHandler(this.coursetxt_SelectedIndexChanged);
             this.coursetxt.TextChanged += new System.EventHandler(this.coursetxt_TextChanged);
@@ -610,8 +609,10 @@ namespace student_management_system
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.button9);
             this.panel3.Controls.Add(this.contacttxt);
+            this.panel3.Controls.Add(this.star2);
+            this.panel3.Controls.Add(this.star1);
+            this.panel3.Controls.Add(this.button9);
             this.panel3.Controls.Add(this.addresstxt);
             this.panel3.Controls.Add(this.emailtxt);
             this.panel3.Controls.Add(this.nametxt);
@@ -625,6 +626,30 @@ namespace student_management_system
             this.panel3.TabIndex = 1;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
+            // star2
+            // 
+            this.star2.AutoSize = true;
+            this.star2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.star2.ForeColor = System.Drawing.Color.Red;
+            this.star2.Location = new System.Drawing.Point(434, 31);
+            this.star2.Name = "star2";
+            this.star2.Size = new System.Drawing.Size(15, 20);
+            this.star2.TabIndex = 12;
+            this.star2.Text = "*";
+            this.star2.Visible = false;
+            // 
+            // star1
+            // 
+            this.star1.AutoSize = true;
+            this.star1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.star1.ForeColor = System.Drawing.Color.Red;
+            this.star1.Location = new System.Drawing.Point(242, 27);
+            this.star1.Name = "star1";
+            this.star1.Size = new System.Drawing.Size(15, 20);
+            this.star1.TabIndex = 6;
+            this.star1.Text = "*";
+            this.star1.Visible = false;
+            // 
             // button9
             // 
             this.button9.Location = new System.Drawing.Point(350, 188);
@@ -634,13 +659,6 @@ namespace student_management_system
             this.button9.Text = "NEXT";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // contacttxt
-            // 
-            this.contacttxt.Location = new System.Drawing.Point(317, 24);
-            this.contacttxt.Name = "contacttxt";
-            this.contacttxt.Size = new System.Drawing.Size(119, 20);
-            this.contacttxt.TabIndex = 11;
             // 
             // addresstxt
             // 
@@ -654,14 +672,15 @@ namespace student_management_system
             // 
             this.emailtxt.Location = new System.Drawing.Point(78, 69);
             this.emailtxt.Name = "emailtxt";
-            this.emailtxt.Size = new System.Drawing.Size(163, 20);
-            this.emailtxt.TabIndex = 4;
+            this.emailtxt.Size = new System.Drawing.Size(163, 24);
+            this.emailtxt.TabIndex = 3;
+            this.emailtxt.TextChanged += new System.EventHandler(this.emailtxt_TextChanged);
             // 
             // nametxt
             // 
             this.nametxt.Location = new System.Drawing.Point(78, 27);
             this.nametxt.Name = "nametxt";
-            this.nametxt.Size = new System.Drawing.Size(163, 20);
+            this.nametxt.Size = new System.Drawing.Size(163, 24);
             this.nametxt.TabIndex = 0;
             this.nametxt.TextChanged += new System.EventHandler(this.nametxt_TextChanged);
             // 
@@ -669,7 +688,7 @@ namespace student_management_system
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(250, 28);
+            this.label9.Location = new System.Drawing.Point(260, 28);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(56, 16);
             this.label9.TabIndex = 5;
@@ -723,10 +742,10 @@ namespace student_management_system
             this.tabPage2.Controls.Add(this.yearstxt);
             this.tabPage2.Controls.Add(this.label19);
             this.tabPage2.Controls.Add(this.label18);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 27);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1111, 544);
+            this.tabPage2.Size = new System.Drawing.Size(1111, 539);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Search Student";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -744,6 +763,11 @@ namespace student_management_system
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(3, 222);
             this.dataGridView1.Name = "dataGridView1";
@@ -783,7 +807,7 @@ namespace student_management_system
             this.teachersearchtxt.FormattingEnabled = true;
             this.teachersearchtxt.Location = new System.Drawing.Point(738, 173);
             this.teachersearchtxt.Name = "teachersearchtxt";
-            this.teachersearchtxt.Size = new System.Drawing.Size(119, 21);
+            this.teachersearchtxt.Size = new System.Drawing.Size(119, 26);
             this.teachersearchtxt.TabIndex = 10;
             this.teachersearchtxt.SelectedIndexChanged += new System.EventHandler(this.teachersearchtxt_SelectedIndexChanged);
             // 
@@ -802,7 +826,7 @@ namespace student_management_system
             this.feessearchtxt.FormattingEnabled = true;
             this.feessearchtxt.Location = new System.Drawing.Point(542, 172);
             this.feessearchtxt.Name = "feessearchtxt";
-            this.feessearchtxt.Size = new System.Drawing.Size(119, 21);
+            this.feessearchtxt.Size = new System.Drawing.Size(119, 26);
             this.feessearchtxt.TabIndex = 8;
             // 
             // label22
@@ -820,7 +844,7 @@ namespace student_management_system
             this.coursesearchtxt.FormattingEnabled = true;
             this.coursesearchtxt.Location = new System.Drawing.Point(364, 171);
             this.coursesearchtxt.Name = "coursesearchtxt";
-            this.coursesearchtxt.Size = new System.Drawing.Size(119, 21);
+            this.coursesearchtxt.Size = new System.Drawing.Size(119, 26);
             this.coursesearchtxt.TabIndex = 6;
             this.coursesearchtxt.SelectedIndexChanged += new System.EventHandler(this.coursesearchtxt_SelectedIndexChanged);
             // 
@@ -838,7 +862,7 @@ namespace student_management_system
             // 
             this.studentnametxt.Location = new System.Drawing.Point(142, 172);
             this.studentnametxt.Name = "studentnametxt";
-            this.studentnametxt.Size = new System.Drawing.Size(159, 20);
+            this.studentnametxt.Size = new System.Drawing.Size(159, 24);
             this.studentnametxt.TabIndex = 4;
             this.studentnametxt.TextChanged += new System.EventHandler(this.studentnametxt_TextChanged_1);
             this.studentnametxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.studentnametxt_KeyDown);
@@ -860,7 +884,7 @@ namespace student_management_system
             "ALL"});
             this.yearstxt.Location = new System.Drawing.Point(97, 114);
             this.yearstxt.Name = "yearstxt";
-            this.yearstxt.Size = new System.Drawing.Size(119, 21);
+            this.yearstxt.Size = new System.Drawing.Size(119, 26);
             this.yearstxt.TabIndex = 2;
             this.yearstxt.SelectedIndexChanged += new System.EventHandler(this.yearstxt_SelectedIndexChanged);
             // 
@@ -893,9 +917,9 @@ namespace student_management_system
             this.tabPage3.Controls.Add(this.panel6);
             this.tabPage3.Controls.Add(this.panel5);
             this.tabPage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 27);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1111, 544);
+            this.tabPage3.Size = new System.Drawing.Size(1111, 539);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Student Fees";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -974,12 +998,17 @@ namespace student_management_system
             // 
             // dataGridView4
             // 
+            this.dataGridView4.AllowUserToAddRows = false;
+            this.dataGridView4.AllowUserToDeleteRows = false;
+            this.dataGridView4.AllowUserToResizeColumns = false;
+            this.dataGridView4.AllowUserToResizeRows = false;
             this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Location = new System.Drawing.Point(7, 35);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.Size = new System.Drawing.Size(768, 265);
             this.dataGridView4.TabIndex = 0;
+            this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
             // 
             // label24
             // 
@@ -1257,9 +1286,9 @@ namespace student_management_system
             // 
             this.tabPage4.Controls.Add(this.label37);
             this.tabPage4.Controls.Add(this.panel7);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Location = new System.Drawing.Point(4, 27);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1111, 544);
+            this.tabPage4.Size = new System.Drawing.Size(1111, 539);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Add Course";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1309,21 +1338,21 @@ namespace student_management_system
             // 
             this.durationtxt.Location = new System.Drawing.Point(188, 172);
             this.durationtxt.Name = "durationtxt";
-            this.durationtxt.Size = new System.Drawing.Size(186, 20);
+            this.durationtxt.Size = new System.Drawing.Size(186, 24);
             this.durationtxt.TabIndex = 3;
             // 
             // cfeestxt
             // 
             this.cfeestxt.Location = new System.Drawing.Point(188, 132);
             this.cfeestxt.Name = "cfeestxt";
-            this.cfeestxt.Size = new System.Drawing.Size(186, 20);
+            this.cfeestxt.Size = new System.Drawing.Size(186, 24);
             this.cfeestxt.TabIndex = 2;
             // 
             // cnametxt
             // 
             this.cnametxt.Location = new System.Drawing.Point(188, 86);
             this.cnametxt.Name = "cnametxt";
-            this.cnametxt.Size = new System.Drawing.Size(186, 20);
+            this.cnametxt.Size = new System.Drawing.Size(186, 24);
             this.cnametxt.TabIndex = 0;
             this.cnametxt.TextChanged += new System.EventHandler(this.cnametxt_TextChanged);
             // 
@@ -1371,9 +1400,9 @@ namespace student_management_system
             // 
             this.tabPage5.Controls.Add(this.label54);
             this.tabPage5.Controls.Add(this.dataGridView2);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Location = new System.Drawing.Point(4, 27);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1111, 544);
+            this.tabPage5.Size = new System.Drawing.Size(1111, 539);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Courses";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1396,14 +1425,15 @@ namespace student_management_system
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(539, 420);
             this.dataGridView2.TabIndex = 0;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // tabPage7
             // 
             this.tabPage7.Controls.Add(this.panel13);
             this.tabPage7.Controls.Add(this.label55);
-            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Location = new System.Drawing.Point(4, 27);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1111, 544);
+            this.tabPage7.Size = new System.Drawing.Size(1111, 539);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Add Teacher";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -1441,21 +1471,21 @@ namespace student_management_system
             // 
             this.subjectxt.Location = new System.Drawing.Point(230, 220);
             this.subjectxt.Name = "subjectxt";
-            this.subjectxt.Size = new System.Drawing.Size(195, 20);
+            this.subjectxt.Size = new System.Drawing.Size(195, 24);
             this.subjectxt.TabIndex = 2;
             // 
             // tqualitxt
             // 
             this.tqualitxt.Location = new System.Drawing.Point(230, 159);
             this.tqualitxt.Name = "tqualitxt";
-            this.tqualitxt.Size = new System.Drawing.Size(195, 20);
+            this.tqualitxt.Size = new System.Drawing.Size(195, 24);
             this.tqualitxt.TabIndex = 1;
             // 
             // tnametxt
             // 
             this.tnametxt.Location = new System.Drawing.Point(230, 89);
             this.tnametxt.Name = "tnametxt";
-            this.tnametxt.Size = new System.Drawing.Size(195, 20);
+            this.tnametxt.Size = new System.Drawing.Size(195, 24);
             this.tnametxt.TabIndex = 0;
             // 
             // label58
@@ -1502,9 +1532,9 @@ namespace student_management_system
             // 
             this.tabPage8.Controls.Add(this.label59);
             this.tabPage8.Controls.Add(this.dataGridView3);
-            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Location = new System.Drawing.Point(4, 27);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(761, 544);
+            this.tabPage8.Size = new System.Drawing.Size(1111, 539);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "Teacher";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -1531,9 +1561,9 @@ namespace student_management_system
             // tabPage9
             // 
             this.tabPage9.Controls.Add(this.panel15);
-            this.tabPage9.Location = new System.Drawing.Point(4, 22);
+            this.tabPage9.Location = new System.Drawing.Point(4, 27);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(761, 544);
+            this.tabPage9.Size = new System.Drawing.Size(1111, 539);
             this.tabPage9.TabIndex = 8;
             this.tabPage9.Text = "Administrator";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -1892,6 +1922,15 @@ namespace student_management_system
             this.label50.TabIndex = 0;
             this.label50.Text = "NOTICE BOARD";
             // 
+            // contacttxt
+            // 
+            this.contacttxt.Location = new System.Drawing.Point(319, 26);
+            this.contacttxt.Name = "contacttxt";
+            this.contacttxt.Size = new System.Drawing.Size(111, 24);
+            this.contacttxt.TabIndex = 2;
+            this.contacttxt.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            this.contacttxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.contacttxt_KeyPress);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2016,7 +2055,6 @@ namespace student_management_system
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.TextBox contacttxt;
         private System.Windows.Forms.RichTextBox addresstxt;
         private System.Windows.Forms.TextBox emailtxt;
         private System.Windows.Forms.TextBox nametxt;
@@ -2128,6 +2166,9 @@ namespace student_management_system
         private System.Windows.Forms.Button button20;
         private System.Windows.Forms.TextBox contxt;
         private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.Label star2;
+        private System.Windows.Forms.Label star1;
+        private System.Windows.Forms.TextBox contacttxt;
     }
 }
 

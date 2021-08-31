@@ -45,13 +45,13 @@ namespace student_management_system
             this.sidtxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button9 = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.button8 = new System.Windows.Forms.Button();
             this.tidtxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -214,6 +214,7 @@ namespace student_management_system
             this.dataGridView1.Size = new System.Drawing.Size(766, 104);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.Visible = false;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // sidtxt
             // 
@@ -248,25 +249,23 @@ namespace student_management_system
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Teachers";
             // 
-            // tabPage3
+            // button9
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.LightGray;
-            this.tabPage3.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(792, 270);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Courses";
+            this.button9.Location = new System.Drawing.Point(355, 213);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(70, 23);
+            this.button9.TabIndex = 13;
+            this.button9.Text = "DELETE";
+            this.button9.UseVisualStyleBackColor = true;
             // 
-            // tabPage4
+            // dataGridView2
             // 
-            this.tabPage4.BackColor = System.Drawing.Color.LightGray;
-            this.tabPage4.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(792, 270);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Users";
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(11, 73);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(766, 104);
+            this.dataGridView2.TabIndex = 12;
+            this.dataGridView2.Visible = false;
             // 
             // button8
             // 
@@ -295,23 +294,25 @@ namespace student_management_system
             this.label2.TabIndex = 9;
             this.label2.Text = "TEACHER ID:";
             // 
-            // button9
+            // tabPage3
             // 
-            this.button9.Location = new System.Drawing.Point(355, 213);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(70, 23);
-            this.button9.TabIndex = 13;
-            this.button9.Text = "DELETE";
-            this.button9.UseVisualStyleBackColor = true;
+            this.tabPage3.BackColor = System.Drawing.Color.LightGray;
+            this.tabPage3.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(792, 270);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Courses";
             // 
-            // dataGridView2
+            // tabPage4
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(11, 73);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(766, 104);
-            this.dataGridView2.TabIndex = 12;
-            this.dataGridView2.Visible = false;
+            this.tabPage4.BackColor = System.Drawing.Color.LightGray;
+            this.tabPage4.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(792, 270);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Users";
             // 
             // ADMIN
             // 
@@ -329,6 +330,7 @@ namespace student_management_system
             this.Name = "ADMIN";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ADMIN";
+            this.Load += new System.EventHandler(this.ADMIN_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
