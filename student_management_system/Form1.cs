@@ -16,11 +16,25 @@ namespace student_management_system
     {
         public Form1()
         {
+
+
+            
             InitializeComponent();
+            timer1.Start();
+            countall();
+            fetchyear();
+            course();
+            fetchcourse();
+            fetchteacher();
+            courses();
+            teacher();
+            stdgrid();
+            countall();
+            comboteacher();
 
             idtxt.KeyUp += Idtxt_KeyUp;
             stdaddtxt.KeyUp += Stdaddtxt_KeyUp;
-
+            stdaddtxt.KeyUp += Stdaddtxt_KeyUp1;
             button10.KeyUp += Button10_KeyUp;
             yearstxt.KeyUp += Yearstxt_KeyUp;
             yearstxt.TextChanged += Yearstxt_TextChanged;
@@ -60,7 +74,33 @@ namespace student_management_system
             tqualitxt.KeyUp += Tqualitxt_KeyUp;
             yeartxt.KeyUp += Yeartxt_KeyUp;
             subjectxt.KeyUp += Subjectxt_KeyUp;
+            Feespaidgrid.KeyUp += Feespaidgrid_KeyUp;
+            idtxt.KeyUp += Idtxt_KeyUp1;
 
+        }
+
+        private void Idtxt_KeyUp1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode==Keys.Enter)
+            {
+                button13.Focus();
+            }
+        }
+
+        private void Stdaddtxt_KeyUp1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode==Keys.Enter)
+            {
+                button14.Focus();
+            }
+        }
+
+        private void Feespaidgrid_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode==Keys.Escape)
+            {
+                Feespaidgrid.Hide();
+            }
         }
 
         private void Subjectxt_KeyUp(object sender, KeyEventArgs e)
@@ -170,7 +210,11 @@ namespace student_management_system
 
         private void Studentnametxt_KeyUp(object sender, KeyEventArgs e)
         {
+          
+            
             if (e.KeyCode == Keys.Enter)
+
+
             {
                 coursesearchtxt.Focus();
             }
@@ -568,7 +612,12 @@ namespace student_management_system
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            teacher();
+            styleGridView();
+            styleGridView1();
+            styleGridView3();
+            styleGridView2();
+            styleGridView4();
             yeartxt.Text = "2021";
 
             String[] arr = {"2021","2022","2023","2024"};
@@ -576,21 +625,24 @@ namespace student_management_system
             {
                 yeartxt.Items.Add(item);
             }
+           
+          
 
-
-            label2.Text = DateTime.Now.ToString();
+           
             nametxt.Focus();
 
 
-            fetchyear();
-            course();
-            fetchcourse();
-            fetchteacher();
-            courses();
-            teacher();
-            stdgrid();
-            countall();
-            comboteacher();
+            //fetchyear();
+            //course();
+            //fetchcourse();
+            //fetchteacher();
+            //courses();
+            //teacher();
+            //stdgrid();
+            //countall();
+            //comboteacher();
+            
+           
 
             tabControl1.Visible = false;
 
@@ -599,11 +651,13 @@ namespace student_management_system
         public void teacher()
         {
 
+            sql.Open();
             string qry = "select * from teacher";
             SqlDataAdapter da = new SqlDataAdapter(qry, sql);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView3.DataSource = dt;
+           
 
             sql.Close();
         }
@@ -664,9 +718,9 @@ namespace student_management_system
         {
 
             sql.Open();
-            string Sql = "select teachername from teacher group by teachername";
+            string qry = "select teachername from teacher group by teachername";
 
-            SqlCommand cmd = new SqlCommand(Sql, sql);
+            SqlCommand cmd = new SqlCommand(qry, sql);
             SqlDataReader DR = cmd.ExecuteReader();
             if (DR.HasRows)
             {
@@ -809,13 +863,13 @@ namespace student_management_system
             {
 
                 panel6.Visible = true;
-
+                db.con.Open();
                 sql.Open();
 
                 try {
 
-                    string qry = "select id,studentname, addresss, contactno, email, college, course, fees,feesrem,feespaid  from students where id = '" + idtxt.Text + "' and statuss is null "; 
-                    SqlDataAdapter da = new SqlDataAdapter(qry, db.con);
+                string qry = "select id,studentname, addresss, contactno, email, college, course, fees,feesrem,feespaid  from students where id = '" + idtxt.Text + "' and statuss is null "; 
+                SqlDataAdapter da = new SqlDataAdapter(qry, db.con);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
@@ -825,9 +879,9 @@ namespace student_management_system
                 stdcoursetxt.Text = dt.Rows[0]["course"].ToString();
                 stdfeestxt.Text = dt.Rows[0]["fees"].ToString();
                 stdcollegetxt.Text = dt.Rows[0]["college"].ToString();
-                    stdpaidtxt.Text = dt.Rows[0]["feespaid"].ToString();
-                    stdremtxt.Text = dt.Rows[0]["feesrem"].ToString();
-                    panel6.Visible = true;
+                stdpaidtxt.Text = dt.Rows[0]["feespaid"].ToString();
+                stdremtxt.Text = dt.Rows[0]["feesrem"].ToString();
+                panel6.Visible = true;
             }
             catch (Exception)
             {
@@ -837,6 +891,7 @@ namespace student_management_system
 
 
             sql.Close();
+                db.con.Close();
         }
 
         }
@@ -854,7 +909,7 @@ namespace student_management_system
         {
 
             db.con.Open();
-            string qry = "update  students set  feespaid = '" + stdpaidtxt.Text + "',feesrem = '" + stdremtxt.Text + "' where id = '" + idtxt.Text + "' or contactno = '" + contxt.Text + "'";
+            string qry = "update  students set  feespaid = '" + stdpaidtxt.Text + "' ,feesrem = '" + stdremtxt.Text + "' where id = '" + idtxt.Text + "' ";
 
             SqlCommand cmd = new SqlCommand(qry, db.con);
             cmd.ExecuteNonQuery();
@@ -866,7 +921,7 @@ namespace student_management_system
             stdaddtxt.Text = "";
             stdnametxt.Text = "";
             stdmobtxt.Text = "";
-            stdemailtxt.Text = "";
+            stdemailtxt.Text = "";  
             stdcollegetxt.Text = "";
             stdremtxt.Text = "";
             stdfeestxt.Text = "";
@@ -889,6 +944,9 @@ namespace student_management_system
                 stdpaidtxt.Text = stdaddtxt.Text;
                 int total = Convert.ToInt32(stdfeestxt.Text) - Convert.ToInt32(stdpaidtxt.Text);
                 stdremtxt.Text = total.ToString();
+
+
+
 
                 if (Convert.ToInt32(stdaddtxt.Text) > Convert.ToInt32(stdfeestxt.Text))
                 {
@@ -1059,22 +1117,28 @@ namespace student_management_system
 
         private void button19_Click(object sender, EventArgs e)
         {
+            try
+            {
+                feessearchtxt.Items.Clear();
+                sql.Open();
+                string qry = "insert into teacher values('" + tnametxt.Text + "','" + tqualitxt.Text + "','" + subjectxt.Text + "')";
+                SqlCommand cmd = new SqlCommand(qry, sql);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("ADDED!");
 
-            feessearchtxt.Items.Clear();
-            sql.Open();
-            string qry = "insert into teacher values('" + tnametxt.Text + "','" + tqualitxt.Text + "','" + subjectxt.Text + "')";
-            SqlCommand cmd = new SqlCommand(qry, sql);
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("ADDED!");
+                tnametxt.Text = "";
+                tqualitxt.Text = "";
+                subjectxt.Text = "";
 
-            tnametxt.Text = "";
-            tqualitxt.Text = "";
-            subjectxt.Text = "";
-
-            sql.Close();
-            fetchteacher();
-            countall();
-            teacher();
+                sql.Close();
+                fetchteacher();
+                countall();
+                teacher();
+            }
+            catch (Exception) { 
+            
+            
+            }
         }
 
         private void idtxt_TextChanged(object sender, EventArgs e)
@@ -1160,7 +1224,7 @@ namespace student_management_system
         }
 
         private void button20_Click(object sender, EventArgs e)
-        {
+          {
 
             try
             {
@@ -1168,7 +1232,7 @@ namespace student_management_system
 
 
 
-                string qry = "select id,studentname, addresss, contactno, email, college, course, fees  from students where contactno = '" + contxt.Text + "' and statuss is null ";
+                string qry = "select id,studentname, addresss, contactno, email, college, course,fees , feespaid,feesrem  from students where contactno = '" + contxt.Text + "' and statuss is null ";
                 SqlDataAdapter da = new SqlDataAdapter(qry, db.con);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -1179,8 +1243,8 @@ namespace student_management_system
                 stdcoursetxt.Text = dt.Rows[0]["course"].ToString();
                 stdfeestxt.Text = dt.Rows[0]["fees"].ToString();
                 stdcollegetxt.Text = dt.Rows[0]["college"].ToString();
-                //stdpaidtxt.Text = dt.Rows[0][9].ToString();
-                //stdremtxt.Text = dt.Rows[0][10].ToString();
+                stdpaidtxt.Text = dt.Rows[0]["feespaid"].ToString();
+                stdremtxt.Text = dt.Rows[0]["feesrem"].ToString();
                 panel6.Visible = true;
             }
             catch (Exception)
@@ -1282,15 +1346,154 @@ namespace student_management_system
             
         }
 
-        private void dataGridView4_CellContentClick(object sender, DataGridViewCellEventArgs e)
+     
+
+    
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        { 
+            string qry = "select id ,studentname,feespaid from students where fees = feespaid  and statuss is null";
+            SqlDataAdapter da = new SqlDataAdapter(qry,sql);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            Feespaidgrid.DataSource = dt;
+            panel14.Visible = true; ;
+            Feespaidgrid.Visible = true;
+
+            
+
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            string qry = "select id,studentname,feesrem from students where statuss is null and feesrem > 0";
+            SqlDataAdapter da = new SqlDataAdapter(qry, sql);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            Feespaidgrid.DataSource = dt;
+            panel14.Visible = true; ;
+            Feespaidgrid.Visible = true;
+
+
+
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label2.Text = DateTime.Now.ToString();
+
+        }
+
+        private void Feespaidgrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void styleGridView()
         {
-           
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.SeaGreen;
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans serif", 10);
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38);
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+        }
+
+
+        public void styleGridView1()
+        {
+            Feespaidgrid.BorderStyle = BorderStyle.None;
+            Feespaidgrid.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            Feespaidgrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            Feespaidgrid.DefaultCellStyle.SelectionBackColor = Color.SeaGreen;
+            Feespaidgrid.DefaultCellStyle.SelectionForeColor = Color.White;
+            Feespaidgrid.BackgroundColor = Color.White;
+            Feespaidgrid.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            Feespaidgrid.EnableHeadersVisualStyles = false;
+            Feespaidgrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            Feespaidgrid.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans serif", 10);
+            Feespaidgrid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38);
+            Feespaidgrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+        }
+
+        public void styleGridView2()
+        {
+            dataGridView4.BorderStyle = BorderStyle.None;
+            dataGridView4.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            dataGridView4.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView4.DefaultCellStyle.SelectionBackColor = Color.SeaGreen;
+            dataGridView4.DefaultCellStyle.SelectionForeColor = Color.White;
+            dataGridView4.BackgroundColor = Color.White;
+            dataGridView4.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridView4.EnableHeadersVisualStyles = false;
+            dataGridView4.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridView4.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans serif", 10);
+            dataGridView4.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38);
+            dataGridView4.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+        }
+        public void styleGridView3()
+        {
+            dataGridView2.BorderStyle = BorderStyle.None;
+            dataGridView2.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            dataGridView2.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView2.DefaultCellStyle.SelectionBackColor = Color.SeaGreen;
+            dataGridView2.DefaultCellStyle.SelectionForeColor = Color.White;
+            dataGridView2.BackgroundColor = Color.White;
+            dataGridView2.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridView2.EnableHeadersVisualStyles = false;
+            dataGridView2.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridView2.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans serif", 10);
+            dataGridView2.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38);
+            dataGridView2.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+        }
+
+        public void styleGridView4()
+        {
+            dataGridView3.BorderStyle = BorderStyle.None;
+            dataGridView3.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            dataGridView3.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView3.DefaultCellStyle.SelectionBackColor = Color.SeaGreen;
+            dataGridView3.DefaultCellStyle.SelectionForeColor = Color.White;
+            dataGridView3.BackgroundColor = Color.White;
+            dataGridView3.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridView3.EnableHeadersVisualStyles = false;
+            dataGridView3.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridView3.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans serif", 10);
+            dataGridView3.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38);
+            dataGridView3.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+        }
+
+        private void stdpaidtxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void stdremtxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button21_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button21_Click_2(object sender, EventArgs e)
+        {
+            teacher();
         }
     }
+
 
 }

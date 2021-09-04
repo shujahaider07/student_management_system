@@ -29,6 +29,7 @@ namespace student_management_system
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel2 = new System.Windows.Forms.Panel();
             this.button17 = new System.Windows.Forms.Button();
@@ -62,6 +63,7 @@ namespace student_management_system
             this.label11 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.contacttxt = new System.Windows.Forms.TextBox();
             this.star2 = new System.Windows.Forms.Label();
             this.star1 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
@@ -90,6 +92,8 @@ namespace student_management_system
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.panel8 = new System.Windows.Forms.Panel();
             this.button20 = new System.Windows.Forms.Button();
             this.contxt = new System.Windows.Forms.TextBox();
@@ -101,6 +105,7 @@ namespace student_management_system
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.Feespaidgrid = new System.Windows.Forms.DataGridView();
             this.button14 = new System.Windows.Forms.Button();
             this.stdaddtxt = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
@@ -185,7 +190,8 @@ namespace student_management_system
             this.label52 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
-            this.contacttxt = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button21 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -198,6 +204,7 @@ namespace student_management_system
             this.panel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Feespaidgrid)).BeginInit();
             this.panel5.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -626,6 +633,15 @@ namespace student_management_system
             this.panel3.TabIndex = 1;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
+            // contacttxt
+            // 
+            this.contacttxt.Location = new System.Drawing.Point(319, 26);
+            this.contacttxt.Name = "contacttxt";
+            this.contacttxt.Size = new System.Drawing.Size(111, 24);
+            this.contacttxt.TabIndex = 2;
+            this.contacttxt.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            this.contacttxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.contacttxt_KeyPress);
+            // 
             // star2
             // 
             this.star2.AutoSize = true;
@@ -910,6 +926,8 @@ namespace student_management_system
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.radioButton2);
+            this.tabPage3.Controls.Add(this.radioButton1);
             this.tabPage3.Controls.Add(this.panel8);
             this.tabPage3.Controls.Add(this.panel14);
             this.tabPage3.Controls.Add(this.label24);
@@ -924,6 +942,30 @@ namespace student_management_system
             this.tabPage3.Text = "Student Fees";
             this.tabPage3.UseVisualStyleBackColor = true;
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(1007, 70);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(71, 20);
+            this.radioButton2.TabIndex = 7;
+            this.radioButton2.Text = "UnPaid";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Location = new System.Drawing.Point(1006, 35);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(54, 20);
+            this.radioButton1.TabIndex = 6;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Paid";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // panel8
             // 
@@ -969,13 +1011,14 @@ namespace student_management_system
             // 
             // panel14
             // 
+            this.panel14.Controls.Add(this.Feespaidgrid);
             this.panel14.Controls.Add(this.label60);
             this.panel14.Controls.Add(this.searchfeestxt);
             this.panel14.Controls.Add(this.dataGridView4);
-            this.panel14.Location = new System.Drawing.Point(58, 182);
+            this.panel14.Location = new System.Drawing.Point(108, 157);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(778, 321);
-            this.panel14.TabIndex = 3;
+            this.panel14.Size = new System.Drawing.Size(801, 333);
+            this.panel14.TabIndex = 0;
             this.panel14.Visible = false;
             // 
             // label60
@@ -1004,11 +1047,10 @@ namespace student_management_system
             this.dataGridView4.AllowUserToResizeRows = false;
             this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(7, 35);
+            this.dataGridView4.Location = new System.Drawing.Point(22, 45);
             this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(768, 265);
+            this.dataGridView4.Size = new System.Drawing.Size(759, 270);
             this.dataGridView4.TabIndex = 0;
-            this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
             // 
             // label24
             // 
@@ -1058,6 +1100,17 @@ namespace student_management_system
             this.panel6.TabIndex = 1;
             this.panel6.Visible = false;
             this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
+            // 
+            // Feespaidgrid
+            // 
+            this.Feespaidgrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Feespaidgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Feespaidgrid.Location = new System.Drawing.Point(3, 35);
+            this.Feespaidgrid.Name = "Feespaidgrid";
+            this.Feespaidgrid.Size = new System.Drawing.Size(795, 293);
+            this.Feespaidgrid.TabIndex = 0;
+            this.Feespaidgrid.Visible = false;
+            this.Feespaidgrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Feespaidgrid_CellContentClick);
             // 
             // button14
             // 
@@ -1115,6 +1168,7 @@ namespace student_management_system
             this.stdremtxt.Name = "stdremtxt";
             this.stdremtxt.Size = new System.Drawing.Size(130, 22);
             this.stdremtxt.TabIndex = 17;
+            this.stdremtxt.TextChanged += new System.EventHandler(this.stdremtxt_TextChanged);
             // 
             // label34
             // 
@@ -1132,6 +1186,7 @@ namespace student_management_system
             this.stdpaidtxt.Name = "stdpaidtxt";
             this.stdpaidtxt.Size = new System.Drawing.Size(130, 22);
             this.stdpaidtxt.TabIndex = 15;
+            this.stdpaidtxt.TextChanged += new System.EventHandler(this.stdpaidtxt_TextChanged);
             // 
             // label33
             // 
@@ -1425,7 +1480,6 @@ namespace student_management_system
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(539, 420);
             this.dataGridView2.TabIndex = 0;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // tabPage7
             // 
@@ -1530,6 +1584,7 @@ namespace student_management_system
             // 
             // tabPage8
             // 
+            this.tabPage8.Controls.Add(this.button21);
             this.tabPage8.Controls.Add(this.label59);
             this.tabPage8.Controls.Add(this.dataGridView3);
             this.tabPage8.Location = new System.Drawing.Point(4, 27);
@@ -1557,6 +1612,7 @@ namespace student_management_system
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(539, 420);
             this.dataGridView3.TabIndex = 1;
+            this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             // 
             // tabPage9
             // 
@@ -1922,14 +1978,19 @@ namespace student_management_system
             this.label50.TabIndex = 0;
             this.label50.Text = "NOTICE BOARD";
             // 
-            // contacttxt
+            // timer1
             // 
-            this.contacttxt.Location = new System.Drawing.Point(319, 26);
-            this.contacttxt.Name = "contacttxt";
-            this.contacttxt.Size = new System.Drawing.Size(111, 24);
-            this.contacttxt.TabIndex = 2;
-            this.contacttxt.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
-            this.contacttxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.contacttxt_KeyPress);
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // button21
+            // 
+            this.button21.Location = new System.Drawing.Point(798, 22);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(71, 35);
+            this.button21.TabIndex = 3;
+            this.button21.Text = "refresh";
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click_2);
             // 
             // Form1
             // 
@@ -1972,6 +2033,7 @@ namespace student_management_system
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Feespaidgrid)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.tabPage4.ResumeLayout(false);
@@ -2169,6 +2231,11 @@ namespace student_management_system
         private System.Windows.Forms.Label star2;
         private System.Windows.Forms.Label star1;
         private System.Windows.Forms.TextBox contacttxt;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.DataGridView Feespaidgrid;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button button21;
     }
 }
 
