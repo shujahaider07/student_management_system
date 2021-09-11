@@ -53,11 +53,65 @@
       <DependentUpon>ADMIN.cs</DependentUpon>
     </Compile>
     <Compile Include="db.cs" />
+    <Compile Include="edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="edit.Designer.cs">
+      <DependentUpon>edit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmaddcourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmaddcourse.Designer.cs">
+      <DependentUpon>frmaddcourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmaddfees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmaddfees.Designer.cs">
+      <DependentUpon>frmaddfees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmaddstudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmaddstudent.Designer.cs">
+      <DependentUpon>frmaddstudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmaddteacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmaddteacher.Designer.cs">
+      <DependentUpon>frmaddteacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmadminlogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmadminlogin.Designer.cs">
+      <DependentUpon>frmadminlogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmcourses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmcourses.Designer.cs">
+      <DependentUpon>frmcourses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmsearchstudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmsearchstudent.Designer.cs">
+      <DependentUpon>frmsearchstudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmteachers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmteachers.Designer.cs">
+      <DependentUpon>frmteachers.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -76,8 +130,35 @@
     <EmbeddedResource Include="ADMIN.resx">
       <DependentUpon>ADMIN.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="edit.resx">
+      <DependentUpon>edit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmaddcourse.resx">
+      <DependentUpon>frmaddcourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmaddfees.resx">
+      <DependentUpon>frmaddfees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmaddstudent.resx">
+      <DependentUpon>frmaddstudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmaddteacher.resx">
+      <DependentUpon>frmaddteacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmadminlogin.resx">
+      <DependentUpon>frmadminlogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmcourses.resx">
+      <DependentUpon>frmcourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmsearchstudent.resx">
+      <DependentUpon>frmsearchstudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmteachers.resx">
+      <DependentUpon>frmteachers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
