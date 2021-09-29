@@ -29,6 +29,7 @@ namespace student_management_system
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(edit));
             this.label1 = new System.Windows.Forms.Label();
             this.idtxt = new System.Windows.Forms.TextBox();
             this.nametxt = new System.Windows.Forms.TextBox();
@@ -51,6 +52,10 @@ namespace student_management_system
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.btndone = new System.Windows.Forms.Button();
+            this.ADDFEESTXT = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -67,6 +72,7 @@ namespace student_management_system
             // 
             this.idtxt.Location = new System.Drawing.Point(43, 75);
             this.idtxt.Name = "idtxt";
+            this.idtxt.ReadOnly = true;
             this.idtxt.Size = new System.Drawing.Size(53, 20);
             this.idtxt.TabIndex = 1;
             // 
@@ -89,7 +95,7 @@ namespace student_management_system
             // 
             // contacttxt
             // 
-            this.contacttxt.Location = new System.Drawing.Point(129, 163);
+            this.contacttxt.Location = new System.Drawing.Point(129, 165);
             this.contacttxt.Name = "contacttxt";
             this.contacttxt.Size = new System.Drawing.Size(178, 20);
             this.contacttxt.TabIndex = 5;
@@ -123,7 +129,7 @@ namespace student_management_system
             // 
             // collegetxt
             // 
-            this.collegetxt.Location = new System.Drawing.Point(129, 242);
+            this.collegetxt.Location = new System.Drawing.Point(129, 241);
             this.collegetxt.Name = "collegetxt";
             this.collegetxt.Size = new System.Drawing.Size(178, 20);
             this.collegetxt.TabIndex = 9;
@@ -140,7 +146,7 @@ namespace student_management_system
             // 
             // coursetxt
             // 
-            this.coursetxt.Location = new System.Drawing.Point(404, 127);
+            this.coursetxt.Location = new System.Drawing.Point(395, 126);
             this.coursetxt.Name = "coursetxt";
             this.coursetxt.Size = new System.Drawing.Size(178, 20);
             this.coursetxt.TabIndex = 11;
@@ -148,8 +154,10 @@ namespace student_management_system
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(331, 128);
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label6.Location = new System.Drawing.Point(322, 123);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 19);
             this.label6.TabIndex = 10;
@@ -157,7 +165,7 @@ namespace student_management_system
             // 
             // feestxt
             // 
-            this.feestxt.Location = new System.Drawing.Point(404, 163);
+            this.feestxt.Location = new System.Drawing.Point(395, 205);
             this.feestxt.Name = "feestxt";
             this.feestxt.Size = new System.Drawing.Size(178, 20);
             this.feestxt.TabIndex = 13;
@@ -165,8 +173,10 @@ namespace student_management_system
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(355, 163);
+            this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label7.Location = new System.Drawing.Point(346, 205);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(43, 19);
             this.label7.TabIndex = 12;
@@ -174,7 +184,7 @@ namespace student_management_system
             // 
             // feespaidtxt
             // 
-            this.feespaidtxt.Location = new System.Drawing.Point(404, 203);
+            this.feespaidtxt.Location = new System.Drawing.Point(669, 121);
             this.feespaidtxt.Name = "feespaidtxt";
             this.feespaidtxt.Size = new System.Drawing.Size(178, 20);
             this.feespaidtxt.TabIndex = 15;
@@ -184,7 +194,7 @@ namespace student_management_system
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(325, 203);
+            this.label8.Location = new System.Drawing.Point(587, 122);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(77, 19);
             this.label8.TabIndex = 14;
@@ -192,7 +202,7 @@ namespace student_management_system
             // 
             // feesremtxt
             // 
-            this.feesremtxt.Location = new System.Drawing.Point(404, 242);
+            this.feesremtxt.Location = new System.Drawing.Point(669, 152);
             this.feesremtxt.Name = "feesremtxt";
             this.feesremtxt.Size = new System.Drawing.Size(178, 20);
             this.feesremtxt.TabIndex = 17;
@@ -201,7 +211,7 @@ namespace student_management_system
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(325, 241);
+            this.label9.Location = new System.Drawing.Point(587, 152);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(77, 19);
             this.label9.TabIndex = 16;
@@ -209,7 +219,7 @@ namespace student_management_system
             // 
             // teachertxt
             // 
-            this.teachertxt.Location = new System.Drawing.Point(404, 272);
+            this.teachertxt.Location = new System.Drawing.Point(395, 166);
             this.teachertxt.Name = "teachertxt";
             this.teachertxt.Size = new System.Drawing.Size(178, 20);
             this.teachertxt.TabIndex = 19;
@@ -217,8 +227,10 @@ namespace student_management_system
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(325, 273);
+            this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label10.Location = new System.Drawing.Point(316, 167);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(74, 19);
             this.label10.TabIndex = 18;
@@ -228,7 +240,7 @@ namespace student_management_system
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Calibri", 18F);
-            this.label11.Location = new System.Drawing.Point(206, 23);
+            this.label11.Location = new System.Drawing.Point(345, 31);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(192, 29);
             this.label11.TabIndex = 20;
@@ -236,24 +248,55 @@ namespace student_management_system
             // 
             // btndone
             // 
-            this.btndone.BackColor = System.Drawing.Color.Peru;
+            this.btndone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(66)))), ((int)(((byte)(98)))));
             this.btndone.FlatAppearance.BorderSize = 0;
             this.btndone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btndone.Font = new System.Drawing.Font("Calibri", 10.25F);
-            this.btndone.Location = new System.Drawing.Point(275, 320);
+            this.btndone.ForeColor = System.Drawing.Color.White;
+            this.btndone.Location = new System.Drawing.Point(372, 296);
             this.btndone.Name = "btndone";
-            this.btndone.Size = new System.Drawing.Size(75, 23);
+            this.btndone.Size = new System.Drawing.Size(116, 34);
             this.btndone.TabIndex = 21;
             this.btndone.Text = "DONE";
             this.btndone.UseVisualStyleBackColor = false;
             this.btndone.Click += new System.EventHandler(this.btndone_Click);
             // 
+            // ADDFEESTXT
+            // 
+            this.ADDFEESTXT.Location = new System.Drawing.Point(669, 296);
+            this.ADDFEESTXT.Name = "ADDFEESTXT";
+            this.ADDFEESTXT.Size = new System.Drawing.Size(178, 20);
+            this.ADDFEESTXT.TabIndex = 23;
+            this.ADDFEESTXT.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(587, 296);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(76, 19);
+            this.label12.TabIndex = 22;
+            this.label12.Text = "ADD FEES:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(295, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(54, 50);
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
+            // 
             // edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(594, 368);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(189)))), ((int)(((byte)(153)))));
+            this.ClientSize = new System.Drawing.Size(859, 359);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.ADDFEESTXT);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.btndone);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.teachertxt);
@@ -280,13 +323,13 @@ namespace student_management_system
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "edit";
             this.Load += new System.EventHandler(this.edit_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label11;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox idtxt;
         public System.Windows.Forms.TextBox nametxt;
@@ -308,5 +351,9 @@ namespace student_management_system
         public System.Windows.Forms.TextBox teachertxt;
         public System.Windows.Forms.Label label10;
         public System.Windows.Forms.Button btndone;
+        public System.Windows.Forms.TextBox ADDFEESTXT;
+        public System.Windows.Forms.Label label12;
+        public System.Windows.Forms.Label label11;
+        public System.Windows.Forms.PictureBox pictureBox1;
     }
 }

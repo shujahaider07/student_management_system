@@ -26,7 +26,7 @@ namespace student_management_system
         public void countall()
         {
             sql.Open();
-            string qry = "select count (cid) from course";
+            string qry = "select count (cid) from course where status is null";
             SqlCommand cmd = new SqlCommand(qry, sql);
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -51,7 +51,7 @@ namespace student_management_system
             sql.Close();
 
             sql.Open();
-            string qry2 = "select count (id) from TEACHER";
+            string qry2 = "select count (id) from TEACHER where status is null";
             SqlCommand cmd2 = new SqlCommand(qry2, sql);
             SqlDataReader reader1 = cmd2.ExecuteReader();
             while (reader1.Read())
@@ -104,15 +104,26 @@ namespace student_management_system
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmaddstudent add = new frmaddstudent();
-            if (add.IsDisposed)
-                add = new frmaddstudent();
 
-            add.MdiParent = this.MdiParent;
-            add.Show();
-            add.BringToFront();
-           
-            add.Show();
+            bool isopen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "frmaddstudent")
+                {
+                    isopen = true;
+                    f.BringToFront();
+                    break;
+                }
+            }
+            if (isopen == false)
+            {
+                frmaddstudent add = new frmaddstudent();
+
+                add.Show();
+            }
+
+
+            
 
         }
 
@@ -121,42 +132,143 @@ namespace student_management_system
 
         private void button3_Click(object sender, EventArgs e)
         {
+            bool isopen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "frmsearchstudent")
+                {
+                    isopen = true;
+                    f.BringToFront();
+                    break;
+                }
+            }
+            if (isopen == false)
+            {
+                frmsearchstudent f = new frmsearchstudent();
+                f.Show();
 
-            frmsearchstudent f = new frmsearchstudent();
-            f.Show();
+            }
+
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            frmaddfees add = new frmaddfees();
-            add.Show();
+
+
+            bool isopen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == " frmaddfees")
+                {
+                    isopen = true;
+                    f.BringToFront();
+                    break;
+                }
+            }
+            if (isopen == false)
+            {
+                frmaddfees add = new frmaddfees();
+                add.Show();
+            }
+
+
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            frmaddcourse course = new frmaddcourse();
-            course.Show();
+            bool isopen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "frmaddcourse")
+                {
+                    isopen = true;
+                    f.BringToFront();
+                    break;
+                }
+            }
+            if (isopen == false)
+            {
+
+                frmaddcourse course = new frmaddcourse();
+                course.Show();
+            }
+
 
 
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            frmcourses c = new frmcourses();
-            c.Show();
+
+            bool isopen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "frmcourses")
+                {
+                    isopen = true;
+                    f.BringToFront();
+                    break;
+                }
+            }
+            if (isopen == false)
+            {
+
+                frmcourses c = new frmcourses();
+                c.Show();
+
+
+
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            frmaddteacher t = new frmaddteacher();
-            t.Show();
+            bool isopen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == " frmaddteacher")
+                {
+                    isopen = true;
+                    f.BringToFront();
+                    break;
+                }
+            }
+            if (isopen == false)
+            {
+
+
+                frmaddteacher t = new frmaddteacher();
+                t.Show();
+            }
+
+           
         }
 
-        private void button7_Click(object sender, EventArgs e)
+   private void button7_Click(object sender, EventArgs e)
         {
-            frmteachers t = new frmteachers();
-            t.Show();
+            bool isopen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == " frmteachers ")
+                {
+                    isopen = true;
+                    f.BringToFront();
+                    break;
+                }
+            }
+            if (isopen == false)
+            {
+
+
+                frmteachers t = new frmteachers();
+                t.Show();
+            }
+
+
+
+           
         }
 
 
@@ -212,8 +324,27 @@ namespace student_management_system
 
         private void button8_Click(object sender, EventArgs e)
         {
-            frmadminlogin f = new frmadminlogin();
-            f.Show();
+            bool isopen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "frmadminlogin")
+                {
+                    isopen = true;
+                    f.BringToFront();
+                    break;
+                }
+            }
+            if (isopen == false)
+            {
+
+
+                frmadminlogin f = new frmadminlogin();
+                f.Show();
+            }
+
+
+
+           
             
         }
 
@@ -225,6 +356,19 @@ namespace student_management_system
         private void button17_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            
+            Login l = new Login();
+            l.Show();
+            this.Hide();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            countall();
         }
     }
 }

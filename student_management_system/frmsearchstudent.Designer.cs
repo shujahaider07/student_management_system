@@ -29,6 +29,7 @@ namespace student_management_system
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmsearchstudent));
             this.label42 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.teachersearchtxt = new System.Windows.Forms.ComboBox();
@@ -40,7 +41,9 @@ namespace student_management_system
             this.yearstxt = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label42
@@ -91,6 +94,7 @@ namespace student_management_system
             this.coursesearchtxt.Name = "coursesearchtxt";
             this.coursesearchtxt.Size = new System.Drawing.Size(119, 21);
             this.coursesearchtxt.TabIndex = 23;
+            this.coursesearchtxt.SelectedIndexChanged += new System.EventHandler(this.coursesearchtxt_SelectedIndexChanged);
             // 
             // label21
             // 
@@ -144,11 +148,20 @@ namespace student_management_system
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Rockwell", 21.75F);
-            this.label18.Location = new System.Drawing.Point(468, 18);
+            this.label18.Location = new System.Drawing.Point(401, 22);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(265, 32);
             this.label18.TabIndex = 17;
             this.label18.Text = "SEARCH STUDENT";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(349, 14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 56);
+            this.pictureBox1.TabIndex = 30;
+            this.pictureBox1.TabStop = false;
             // 
             // frmsearchstudent
             // 
@@ -156,6 +169,7 @@ namespace student_management_system
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1026, 561);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label42);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.teachersearchtxt);
@@ -172,6 +186,7 @@ namespace student_management_system
             this.Text = "frmsearchstudent";
             this.Load += new System.EventHandler(this.frmsearchstudent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,5 +204,6 @@ namespace student_management_system
         private System.Windows.Forms.ComboBox yearstxt;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

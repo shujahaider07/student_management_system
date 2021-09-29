@@ -60,7 +60,7 @@ namespace student_management_system
             }
             else
             {
-                MessageBox.Show("Incorrect Username and Password");
+                infolbl.Visible = true;
             }
 
 

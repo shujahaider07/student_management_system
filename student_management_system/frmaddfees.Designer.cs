@@ -29,11 +29,14 @@ namespace student_management_system
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.button20 = new System.Windows.Forms.Button();
-            this.contxt = new System.Windows.Forms.TextBox();
-            this.label64 = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmaddfees));
             this.panel14 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.year = new System.Windows.Forms.ComboBox();
+            this.batch = new System.Windows.Forms.ComboBox();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.label60 = new System.Windows.Forms.Label();
             this.searchfeestxt = new System.Windows.Forms.TextBox();
@@ -41,6 +44,7 @@ namespace student_management_system
             this.label25 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.button14 = new System.Windows.Forms.Button();
+            this.msglbl = new System.Windows.Forms.Label();
             this.stdaddtxt = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
             this.stdcollegetxt = new System.Windows.Forms.ComboBox();
@@ -64,66 +68,69 @@ namespace student_management_system
             this.button13 = new System.Windows.Forms.Button();
             this.idtxt = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.panel8.SuspendLayout();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.button20);
-            this.panel8.Controls.Add(this.contxt);
-            this.panel8.Controls.Add(this.label64);
-            this.panel8.Location = new System.Drawing.Point(495, 75);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(361, 74);
-            this.panel8.TabIndex = 11;
-            // 
-            // button20
-            // 
-            this.button20.BackColor = System.Drawing.Color.Black;
-            this.button20.FlatAppearance.BorderSize = 0;
-            this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button20.ForeColor = System.Drawing.Color.White;
-            this.button20.Location = new System.Drawing.Point(265, 26);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(75, 23);
-            this.button20.TabIndex = 5;
-            this.button20.Text = "VIEW";
-            this.button20.UseVisualStyleBackColor = false;
-            this.button20.Click += new System.EventHandler(this.button20_Click);
-            // 
-            // contxt
-            // 
-            this.contxt.Location = new System.Drawing.Point(117, 26);
-            this.contxt.Name = "contxt";
-            this.contxt.Size = new System.Drawing.Size(134, 20);
-            this.contxt.TabIndex = 4;
-            // 
-            // label64
-            // 
-            this.label64.AutoSize = true;
-            this.label64.Font = new System.Drawing.Font("Rockwell", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label64.Location = new System.Drawing.Point(3, 28);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(116, 17);
-            this.label64.TabIndex = 3;
-            this.label64.Text = "CONTACT NO :";
             // 
             // panel14
             // 
+            this.panel14.Controls.Add(this.label2);
+            this.panel14.Controls.Add(this.label1);
+            this.panel14.Controls.Add(this.year);
+            this.panel14.Controls.Add(this.batch);
             this.panel14.Controls.Add(this.dataGridView4);
             this.panel14.Controls.Add(this.label60);
             this.panel14.Controls.Add(this.searchfeestxt);
-            this.panel14.Location = new System.Drawing.Point(43, 1);
+            this.panel14.Location = new System.Drawing.Point(6, 173);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(813, 424);
+            this.panel14.Size = new System.Drawing.Size(763, 378);
             this.panel14.TabIndex = 6;
-            this.panel14.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(255, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 19);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "YEAR:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(6, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 19);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "COURSE:";
+            // 
+            // year
+            // 
+            this.year.FormattingEnabled = true;
+            this.year.Location = new System.Drawing.Point(322, 32);
+            this.year.Name = "year";
+            this.year.Size = new System.Drawing.Size(143, 21);
+            this.year.TabIndex = 9;
+            this.year.SelectedIndexChanged += new System.EventHandler(this.year_SelectedIndexChanged);
+            // 
+            // batch
+            // 
+            this.batch.FormattingEnabled = true;
+            this.batch.Location = new System.Drawing.Point(91, 31);
+            this.batch.Name = "batch";
+            this.batch.Size = new System.Drawing.Size(143, 21);
+            this.batch.TabIndex = 8;
+            this.batch.SelectedIndexChanged += new System.EventHandler(this.batch_SelectedIndexChanged);
             // 
             // dataGridView4
             // 
@@ -131,18 +138,25 @@ namespace student_management_system
             this.dataGridView4.AllowUserToDeleteRows = false;
             this.dataGridView4.AllowUserToResizeColumns = false;
             this.dataGridView4.AllowUserToResizeRows = false;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView4.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView4.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(22, 45);
+            this.dataGridView4.Location = new System.Drawing.Point(3, 75);
             this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(779, 351);
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView4.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView4.Size = new System.Drawing.Size(757, 351);
             this.dataGridView4.TabIndex = 0;
+            this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
             // 
             // label60
             // 
             this.label60.AutoSize = true;
             this.label60.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label60.Location = new System.Drawing.Point(160, 20);
+            this.label60.ForeColor = System.Drawing.Color.White;
+            this.label60.Location = new System.Drawing.Point(556, 50);
             this.label60.Name = "label60";
             this.label60.Size = new System.Drawing.Size(63, 19);
             this.label60.TabIndex = 6;
@@ -150,7 +164,7 @@ namespace student_management_system
             // 
             // searchfeestxt
             // 
-            this.searchfeestxt.Location = new System.Drawing.Point(229, 19);
+            this.searchfeestxt.Location = new System.Drawing.Point(625, 49);
             this.searchfeestxt.Name = "searchfeestxt";
             this.searchfeestxt.Size = new System.Drawing.Size(113, 20);
             this.searchfeestxt.TabIndex = 1;
@@ -160,7 +174,8 @@ namespace student_management_system
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(90, 44);
+            this.label24.ForeColor = System.Drawing.Color.White;
+            this.label24.Location = new System.Drawing.Point(12, -3);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(81, 19);
             this.label24.TabIndex = 7;
@@ -169,8 +184,9 @@ namespace student_management_system
             // label25
             // 
             this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.label25.Font = new System.Drawing.Font("Rockwell", 21.75F);
-            this.label25.Location = new System.Drawing.Point(395, 28);
+            this.label25.Location = new System.Drawing.Point(637, 34);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(218, 32);
             this.label25.TabIndex = 10;
@@ -178,7 +194,9 @@ namespace student_management_system
             // 
             // panel6
             // 
+            this.panel6.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.panel6.Controls.Add(this.button14);
+            this.panel6.Controls.Add(this.msglbl);
             this.panel6.Controls.Add(this.stdaddtxt);
             this.panel6.Controls.Add(this.label36);
             this.panel6.Controls.Add(this.stdcollegetxt);
@@ -198,11 +216,10 @@ namespace student_management_system
             this.panel6.Controls.Add(this.stdnametxt);
             this.panel6.Controls.Add(this.label28);
             this.panel6.Controls.Add(this.label27);
-            this.panel6.Location = new System.Drawing.Point(205, 234);
+            this.panel6.Location = new System.Drawing.Point(775, 86);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(583, 266);
+            this.panel6.Size = new System.Drawing.Size(551, 659);
             this.panel6.TabIndex = 9;
-            this.panel6.Visible = false;
             // 
             // button14
             // 
@@ -210,7 +227,7 @@ namespace student_management_system
             this.button14.FlatAppearance.BorderSize = 0;
             this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button14.ForeColor = System.Drawing.Color.White;
-            this.button14.Location = new System.Drawing.Point(265, 231);
+            this.button14.Location = new System.Drawing.Point(298, 458);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(75, 23);
             this.button14.TabIndex = 6;
@@ -218,9 +235,22 @@ namespace student_management_system
             this.button14.UseVisualStyleBackColor = false;
             this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
+            // msglbl
+            // 
+            this.msglbl.AutoSize = true;
+            this.msglbl.Font = new System.Drawing.Font("Calibri", 22.75F);
+            this.msglbl.ForeColor = System.Drawing.Color.DarkGreen;
+            this.msglbl.Location = new System.Drawing.Point(160, 21);
+            this.msglbl.Name = "msglbl";
+            this.msglbl.Size = new System.Drawing.Size(246, 38);
+            this.msglbl.TabIndex = 33;
+            this.msglbl.Text = "Fees Already Paid!";
+            this.msglbl.Visible = false;
+            // 
             // stdaddtxt
             // 
-            this.stdaddtxt.Location = new System.Drawing.Point(282, 195);
+            this.stdaddtxt.Enabled = false;
+            this.stdaddtxt.Location = new System.Drawing.Point(276, 396);
             this.stdaddtxt.Name = "stdaddtxt";
             this.stdaddtxt.Size = new System.Drawing.Size(130, 20);
             this.stdaddtxt.TabIndex = 21;
@@ -230,7 +260,7 @@ namespace student_management_system
             // 
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(189, 194);
+            this.label36.Location = new System.Drawing.Point(183, 395);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(91, 19);
             this.label36.TabIndex = 22;
@@ -239,7 +269,7 @@ namespace student_management_system
             // stdcollegetxt
             // 
             this.stdcollegetxt.FormattingEnabled = true;
-            this.stdcollegetxt.Location = new System.Drawing.Point(375, 115);
+            this.stdcollegetxt.Location = new System.Drawing.Point(383, 246);
             this.stdcollegetxt.Name = "stdcollegetxt";
             this.stdcollegetxt.Size = new System.Drawing.Size(130, 21);
             this.stdcollegetxt.TabIndex = 20;
@@ -248,7 +278,7 @@ namespace student_management_system
             // 
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(305, 114);
+            this.label35.Location = new System.Drawing.Point(313, 241);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(71, 19);
             this.label35.TabIndex = 19;
@@ -256,8 +286,9 @@ namespace student_management_system
             // 
             // stdremtxt
             // 
-            this.stdremtxt.Location = new System.Drawing.Point(411, 153);
+            this.stdremtxt.Location = new System.Drawing.Point(383, 294);
             this.stdremtxt.Name = "stdremtxt";
+            this.stdremtxt.ReadOnly = true;
             this.stdremtxt.Size = new System.Drawing.Size(130, 20);
             this.stdremtxt.TabIndex = 17;
             // 
@@ -265,16 +296,17 @@ namespace student_management_system
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(286, 153);
+            this.label34.Location = new System.Drawing.Point(294, 294);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(126, 19);
+            this.label34.Size = new System.Drawing.Size(92, 19);
             this.label34.TabIndex = 18;
-            this.label34.Text = "Remaining fees:";
+            this.label34.Text = "Remaining:";
             // 
             // stdpaidtxt
             // 
-            this.stdpaidtxt.Location = new System.Drawing.Point(145, 153);
+            this.stdpaidtxt.Location = new System.Drawing.Point(153, 294);
             this.stdpaidtxt.Name = "stdpaidtxt";
+            this.stdpaidtxt.ReadOnly = true;
             this.stdpaidtxt.Size = new System.Drawing.Size(130, 20);
             this.stdpaidtxt.TabIndex = 15;
             // 
@@ -282,7 +314,7 @@ namespace student_management_system
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(52, 152);
+            this.label33.Location = new System.Drawing.Point(60, 293);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(84, 19);
             this.label33.TabIndex = 16;
@@ -290,8 +322,9 @@ namespace student_management_system
             // 
             // stdfeestxt
             // 
-            this.stdfeestxt.Location = new System.Drawing.Point(145, 116);
+            this.stdfeestxt.Location = new System.Drawing.Point(153, 246);
             this.stdfeestxt.Name = "stdfeestxt";
+            this.stdfeestxt.ReadOnly = true;
             this.stdfeestxt.Size = new System.Drawing.Size(130, 20);
             this.stdfeestxt.TabIndex = 13;
             // 
@@ -299,7 +332,7 @@ namespace student_management_system
             // 
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(48, 117);
+            this.label32.Location = new System.Drawing.Point(56, 244);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(88, 19);
             this.label32.TabIndex = 14;
@@ -308,7 +341,7 @@ namespace student_management_system
             // stdcoursetxt
             // 
             this.stdcoursetxt.FormattingEnabled = true;
-            this.stdcoursetxt.Location = new System.Drawing.Point(374, 80);
+            this.stdcoursetxt.Location = new System.Drawing.Point(383, 202);
             this.stdcoursetxt.Name = "stdcoursetxt";
             this.stdcoursetxt.Size = new System.Drawing.Size(130, 21);
             this.stdcoursetxt.TabIndex = 12;
@@ -317,7 +350,7 @@ namespace student_management_system
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(304, 79);
+            this.label31.Location = new System.Drawing.Point(313, 201);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(67, 19);
             this.label31.TabIndex = 11;
@@ -325,8 +358,9 @@ namespace student_management_system
             // 
             // stdemailtxt
             // 
-            this.stdemailtxt.Location = new System.Drawing.Point(145, 80);
+            this.stdemailtxt.Location = new System.Drawing.Point(154, 202);
             this.stdemailtxt.Name = "stdemailtxt";
+            this.stdemailtxt.ReadOnly = true;
             this.stdemailtxt.Size = new System.Drawing.Size(130, 20);
             this.stdemailtxt.TabIndex = 9;
             // 
@@ -334,7 +368,7 @@ namespace student_management_system
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(75, 81);
+            this.label30.Location = new System.Drawing.Point(84, 203);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(61, 19);
             this.label30.TabIndex = 10;
@@ -342,8 +376,9 @@ namespace student_management_system
             // 
             // stdmobtxt
             // 
-            this.stdmobtxt.Location = new System.Drawing.Point(374, 43);
+            this.stdmobtxt.Location = new System.Drawing.Point(383, 155);
             this.stdmobtxt.Name = "stdmobtxt";
+            this.stdmobtxt.ReadOnly = true;
             this.stdmobtxt.Size = new System.Drawing.Size(130, 20);
             this.stdmobtxt.TabIndex = 7;
             // 
@@ -351,7 +386,7 @@ namespace student_management_system
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(304, 44);
+            this.label29.Location = new System.Drawing.Point(313, 156);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(64, 19);
             this.label29.TabIndex = 8;
@@ -359,8 +394,9 @@ namespace student_management_system
             // 
             // stdnametxt
             // 
-            this.stdnametxt.Location = new System.Drawing.Point(145, 42);
+            this.stdnametxt.Location = new System.Drawing.Point(154, 154);
             this.stdnametxt.Name = "stdnametxt";
+            this.stdnametxt.ReadOnly = true;
             this.stdnametxt.Size = new System.Drawing.Size(130, 20);
             this.stdnametxt.TabIndex = 6;
             // 
@@ -368,7 +404,7 @@ namespace student_management_system
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(21, 42);
+            this.label28.Location = new System.Drawing.Point(30, 154);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(118, 19);
             this.label28.TabIndex = 6;
@@ -378,7 +414,7 @@ namespace student_management_system
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(3, -2);
+            this.label27.Location = new System.Drawing.Point(3, 87);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(157, 19);
             this.label27.TabIndex = 3;
@@ -386,20 +422,21 @@ namespace student_management_system
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.label24);
             this.panel5.Controls.Add(this.button13);
             this.panel5.Controls.Add(this.idtxt);
             this.panel5.Controls.Add(this.label26);
-            this.panel5.Location = new System.Drawing.Point(94, 75);
+            this.panel5.Location = new System.Drawing.Point(6, 114);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(357, 74);
             this.panel5.TabIndex = 8;
             // 
             // button13
             // 
-            this.button13.BackColor = System.Drawing.Color.Black;
+            this.button13.BackColor = System.Drawing.Color.White;
             this.button13.FlatAppearance.BorderSize = 0;
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.ForeColor = System.Drawing.Color.White;
+            this.button13.ForeColor = System.Drawing.Color.Black;
             this.button13.Location = new System.Drawing.Point(265, 26);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(75, 23);
@@ -414,61 +451,56 @@ namespace student_management_system
             this.idtxt.Name = "idtxt";
             this.idtxt.Size = new System.Drawing.Size(134, 20);
             this.idtxt.TabIndex = 4;
+            this.idtxt.TextChanged += new System.EventHandler(this.idtxt_TextChanged);
             // 
             // label26
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.White;
             this.label26.Location = new System.Drawing.Point(12, 25);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(91, 19);
             this.label26.TabIndex = 3;
             this.label26.Text = "Student ID:";
             // 
-            // radioButton2
+            // pictureBox1
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(862, 75);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(60, 17);
-            this.radioButton2.TabIndex = 13;
-            this.radioButton2.Text = "UnPaid";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(570, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(71, 56);
+            this.pictureBox1.TabIndex = 32;
+            this.pictureBox1.TabStop = false;
             // 
-            // radioButton1
+            // panel1
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(861, 40);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(46, 17);
-            this.radioButton1.TabIndex = 12;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Paid";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.panel1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.panel1.Controls.Add(this.label25);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1370, 87);
+            this.panel1.TabIndex = 34;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // frmaddfees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(936, 528);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.panel14);
-            this.Controls.Add(this.label24);
-            this.Controls.Add(this.label25);
-            this.Controls.Add(this.panel6);
+            this.BackColor = System.Drawing.Color.DimGray;
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel8);
+            this.Controls.Add(this.panel14);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel1);
             this.Name = "frmaddfees";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmaddfees";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmaddfees_Load);
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
@@ -476,17 +508,14 @@ namespace student_management_system
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.TextBox contxt;
-        private System.Windows.Forms.Label label64;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Label label60;
         private System.Windows.Forms.TextBox searchfeestxt;
@@ -518,7 +547,12 @@ namespace student_management_system
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.TextBox idtxt;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox batch;
+        private System.Windows.Forms.ComboBox year;
+        private System.Windows.Forms.Label msglbl;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

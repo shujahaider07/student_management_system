@@ -82,6 +82,20 @@ namespace student_management_system
 
         }
 
+
+        public void fetchall()
+        {
+            sql.Open();
+            string qry1 = "select *  from students where statuss is null";
+            SqlDataAdapter da1 = new SqlDataAdapter(qry1, sql);
+            DataTable dt1 = new DataTable();
+            da1.Fill(dt1);
+            dataGridView1.DataSource = dt1;
+            sql.Close();
+
+        }
+
+
         private void Yearstxt_TextChanged(object sender, EventArgs e)
         {
             sql.Open();
@@ -114,7 +128,7 @@ namespace student_management_system
             coursesearchtxt.Items.Clear();
 
             sql.Open();
-            string Sqll = "select coursename from course group by coursename";
+            string Sqll = "select coursename from course where status is null group by coursename ";
 
             SqlCommand cmdd = new SqlCommand(Sqll, sql);
             SqlDataReader DRR = cmdd.ExecuteReader();
@@ -132,7 +146,8 @@ namespace student_management_system
         {
 
             sql.Open();
-            string qry = "select teachername from teacher group by teachername";
+            string qry = "select teachername" +
+                " from teacher where status is null group by teachername";
 
             SqlCommand cmd = new SqlCommand(qry, sql);
             SqlDataReader DR = cmd.ExecuteReader();
@@ -151,6 +166,7 @@ namespace student_management_system
         }
         private void frmsearchstudent_Load(object sender, EventArgs e)
         {
+            fetchall();
             styleGridView();
             fetchyear();
             fetchcourse();
@@ -160,14 +176,20 @@ namespace student_management_system
         private void studentnametxt_TextChanged(object sender, EventArgs e)
         {
             sql.Open();
-            string qry = "select * from students where statuss is null and  studentname like '%" + studentnametxt.Text + "%'";
-            SqlDataAdapter da = new SqlDataAdapter(qry, db.con);
+            
+            string qry = "select * from students where  statuss is null and concat(studentname,contactno,addresss) like '%"+studentnametxt.Text+"%' and course = '"+coursesearchtxt.Text+"' " ;
+            SqlDataAdapter da = new SqlDataAdapter(qry, sql);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
 
             sql.Close();
            // count();
+        }
+
+        private void coursesearchtxt_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -29,10 +29,13 @@ namespace student_management_system
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmteachers));
             this.label59 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.button23 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label59
@@ -69,12 +72,22 @@ namespace student_management_system
             this.button23.UseVisualStyleBackColor = false;
             this.button23.Click += new System.EventHandler(this.button23_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(276, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(65, 59);
+            this.pictureBox1.TabIndex = 32;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmteachers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(857, 439);
+            this.ClientSize = new System.Drawing.Size(857, 438);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button23);
             this.Controls.Add(this.label59);
             this.Controls.Add(this.dataGridView3);
@@ -83,6 +96,7 @@ namespace student_management_system
             this.Text = "frmteachers";
             this.Load += new System.EventHandler(this.frmteachers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -92,5 +106,6 @@ namespace student_management_system
         private System.Windows.Forms.Label label59;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Button button23;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

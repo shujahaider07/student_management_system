@@ -29,6 +29,7 @@ namespace student_management_system
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmaddteacher));
             this.panel13 = new System.Windows.Forms.Panel();
             this.button19 = new System.Windows.Forms.Button();
             this.subjectxt = new System.Windows.Forms.TextBox();
@@ -38,8 +39,10 @@ namespace student_management_system
             this.label57 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.SHOWTEACHER = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel13
@@ -68,7 +71,7 @@ namespace student_management_system
             this.button19.TabIndex = 8;
             this.button19.Text = "ADD";
             this.button19.UseVisualStyleBackColor = false;
-            this.button19.Click += new System.EventHandler(this.button19_Click);
+            this.button19.Click += new System.EventHandler(this.button19_Click_1);
             // 
             // subjectxt
             // 
@@ -125,25 +128,34 @@ namespace student_management_system
             // 
             this.label55.AutoSize = true;
             this.label55.Font = new System.Drawing.Font("Rockwell", 21.75F);
-            this.label55.Location = new System.Drawing.Point(331, 48);
+            this.label55.Location = new System.Drawing.Point(335, 26);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(218, 32);
             this.label55.TabIndex = 2;
             this.label55.Text = "ADD TEACHER";
             // 
-            // button1
+            // SHOWTEACHER
             // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(700, 399);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 34);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "show teachers";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.SHOWTEACHER.BackColor = System.Drawing.Color.Black;
+            this.SHOWTEACHER.FlatAppearance.BorderSize = 0;
+            this.SHOWTEACHER.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SHOWTEACHER.ForeColor = System.Drawing.Color.White;
+            this.SHOWTEACHER.Location = new System.Drawing.Point(700, 399);
+            this.SHOWTEACHER.Name = "SHOWTEACHER";
+            this.SHOWTEACHER.Size = new System.Drawing.Size(98, 34);
+            this.SHOWTEACHER.TabIndex = 9;
+            this.SHOWTEACHER.Text = "show teachers";
+            this.SHOWTEACHER.UseVisualStyleBackColor = false;
+            this.SHOWTEACHER.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(269, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(69, 65);
+            this.pictureBox1.TabIndex = 32;
+            this.pictureBox1.TabStop = false;
             // 
             // frmaddteacher
             // 
@@ -151,14 +163,17 @@ namespace student_management_system
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(855, 501);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.SHOWTEACHER);
             this.Controls.Add(this.panel13);
             this.Controls.Add(this.label55);
             this.Name = "frmaddteacher";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmaddteacher";
+            this.Load += new System.EventHandler(this.frmaddteacher_Load);
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,6 +190,7 @@ namespace student_management_system
         private System.Windows.Forms.Label label57;
         private System.Windows.Forms.Label label56;
         private System.Windows.Forms.Label label55;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.Button SHOWTEACHER;
     }
 }

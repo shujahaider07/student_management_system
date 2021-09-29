@@ -31,6 +31,7 @@ namespace student_management_system
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button17 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@ namespace student_management_system
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label47 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.button18 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -59,8 +59,8 @@ namespace student_management_system
             this.label52 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
-            this.button17 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -87,6 +87,23 @@ namespace student_management_system
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(121, 749);
             this.panel2.TabIndex = 1;
+            // 
+            // button17
+            // 
+            this.button17.BackColor = System.Drawing.Color.White;
+            this.button17.FlatAppearance.BorderSize = 0;
+            this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button17.Font = new System.Drawing.Font("Calibri", 10.25F);
+            this.button17.Image = ((System.Drawing.Image)(resources.GetObject("button17.Image")));
+            this.button17.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button17.Location = new System.Drawing.Point(12, 14);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(75, 75);
+            this.button17.TabIndex = 6;
+            this.button17.Text = "HOME";
+            this.button17.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button17.UseVisualStyleBackColor = false;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // button7
             // 
@@ -340,16 +357,6 @@ namespace student_management_system
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calisto MT", 14.25F);
-            this.label2.Location = new System.Drawing.Point(1109, 29);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 22);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "label2";
-            // 
             // button18
             // 
             this.button18.BackColor = System.Drawing.Color.LightGray;
@@ -364,6 +371,7 @@ namespace student_management_system
             this.button18.TabIndex = 6;
             this.button18.Text = "LOGOUT";
             this.button18.UseVisualStyleBackColor = false;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
             // panel1
             // 
@@ -434,23 +442,6 @@ namespace student_management_system
             this.label50.TabIndex = 0;
             this.label50.Text = "NOTICE BOARD";
             // 
-            // button17
-            // 
-            this.button17.BackColor = System.Drawing.Color.White;
-            this.button17.FlatAppearance.BorderSize = 0;
-            this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button17.Font = new System.Drawing.Font("Calibri", 10.25F);
-            this.button17.Image = ((System.Drawing.Image)(resources.GetObject("button17.Image")));
-            this.button17.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button17.Location = new System.Drawing.Point(12, 14);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(75, 75);
-            this.button17.TabIndex = 6;
-            this.button17.Text = "HOME";
-            this.button17.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button17.UseVisualStyleBackColor = false;
-            this.button17.Click += new System.EventHandler(this.button17_Click);
-            // 
             // button8
             // 
             this.button8.BackColor = System.Drawing.Color.White;
@@ -468,15 +459,30 @@ namespace student_management_system
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Image = ((System.Drawing.Image)(resources.GetObject("label3.Image")));
+            this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label3.Location = new System.Drawing.Point(1296, 120);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 23);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "             ";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button18);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel12);
@@ -529,7 +535,6 @@ namespace student_management_system
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel12;
@@ -539,6 +544,7 @@ namespace student_management_system
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Label label3;
     }
 }
 

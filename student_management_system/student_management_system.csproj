@@ -59,6 +59,18 @@
     <Compile Include="edit.Designer.cs">
       <DependentUpon>edit.cs</DependentUpon>
     </Compile>
+    <Compile Include="editcourses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editcourses.Designer.cs">
+      <DependentUpon>editcourses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="editteacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editteacher.Designer.cs">
+      <DependentUpon>editteacher.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,11 +101,29 @@
     <Compile Include="frmaddteacher.Designer.cs">
       <DependentUpon>frmaddteacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmadmincourses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmadmincourses.Designer.cs">
+      <DependentUpon>frmadmincourses.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmadminlogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmadminlogin.Designer.cs">
       <DependentUpon>frmadminlogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmadminstudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmadminstudent.Designer.cs">
+      <DependentUpon>frmadminstudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmadminteacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmadminteacher.Designer.cs">
+      <DependentUpon>frmadminteacher.cs</DependentUpon>
     </Compile>
     <Compile Include="frmcourses.cs">
       <SubType>Form</SubType>
@@ -133,6 +163,12 @@
     <EmbeddedResource Include="edit.resx">
       <DependentUpon>edit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="editcourses.resx">
+      <DependentUpon>editcourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editteacher.resx">
+      <DependentUpon>editteacher.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -148,8 +184,17 @@
     <EmbeddedResource Include="frmaddteacher.resx">
       <DependentUpon>frmaddteacher.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmadmincourses.resx">
+      <DependentUpon>frmadmincourses.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmadminlogin.resx">
       <DependentUpon>frmadminlogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmadminstudent.resx">
+      <DependentUpon>frmadminstudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmadminteacher.resx">
+      <DependentUpon>frmadminteacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmcourses.resx">
       <DependentUpon>frmcourses.cs</DependentUpon>

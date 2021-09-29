@@ -16,7 +16,27 @@ namespace student_management_system
         public frmadminlogin()
         {
             InitializeComponent();
+            aduser.KeyUp += Aduser_KeyUp;
+            adpass.KeyUp += Adpass_KeyUp;
         }
+
+        private void Adpass_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+              loginbtn.Focus();
+
+            }
+        }
+
+        private void Aduser_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                adpass.Focus();
+            }
+        }
+
         SqlConnection sql = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=universityportal;Integrated Security=True");
 
         private void loginbtn_Click(object sender, EventArgs e)
@@ -30,12 +50,14 @@ namespace student_management_system
 
             if (dr.HasRows == true)
             {
-                MessageBox.Show("Login Adminstrator form");
+                MessageBox.Show("Login Administrator form");
                 ADMIN a = new ADMIN();
-                a.Show();
+                this.Hide();
+                a.ShowDialog();
+               
                 aduser.Text = "";
                 adpass.Text = "";
-                this.Hide();
+               
 
             }
             else
@@ -55,6 +77,11 @@ namespace student_management_system
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmadminlogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

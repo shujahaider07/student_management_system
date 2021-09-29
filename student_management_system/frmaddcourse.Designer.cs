@@ -29,6 +29,7 @@ namespace student_management_system
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmaddcourse));
             this.label37 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.button15 = new System.Windows.Forms.Button();
@@ -40,14 +41,17 @@ namespace student_management_system
             this.label39 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label37
             // 
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Rockwell", 21.75F);
-            this.label37.Location = new System.Drawing.Point(307, 33);
+            this.label37.Location = new System.Drawing.Point(342, 31);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(200, 32);
             this.label37.TabIndex = 2;
@@ -93,9 +97,11 @@ namespace student_management_system
             // cfeestxt
             // 
             this.cfeestxt.Location = new System.Drawing.Point(188, 132);
+            this.cfeestxt.MaxLength = 5;
             this.cfeestxt.Name = "cfeestxt";
             this.cfeestxt.Size = new System.Drawing.Size(186, 20);
             this.cfeestxt.TabIndex = 2;
+            this.cfeestxt.TextChanged += new System.EventHandler(this.cfeestxt_TextChanged);
             // 
             // cnametxt
             // 
@@ -158,20 +164,45 @@ namespace student_management_system
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(286, 26);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 56);
+            this.pictureBox1.TabIndex = 31;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(660, 228);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(133, 18);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "*Accepts Digits Only";
+            this.label1.Visible = false;
+            // 
             // frmaddcourse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(862, 513);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label37);
             this.Controls.Add(this.panel7);
             this.Name = "frmaddcourse";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmaddcourse";
+            this.Load += new System.EventHandler(this.frmaddcourse_Load);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,5 +221,7 @@ namespace student_management_system
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

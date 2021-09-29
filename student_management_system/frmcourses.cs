@@ -26,7 +26,7 @@ namespace student_management_system
         public void courses()
         {
             sql.Open();
-            string qry = "select * from course";
+            string qry = "select * from course where status is null";
             SqlDataAdapter da = new SqlDataAdapter(qry, sql);
             DataTable dt = new DataTable();
             da.Fill(dt);

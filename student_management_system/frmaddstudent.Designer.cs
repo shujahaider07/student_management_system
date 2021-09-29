@@ -33,7 +33,7 @@ namespace student_management_system
             this.label5 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnsubmit = new System.Windows.Forms.Button();
             this.yeartxt = new System.Windows.Forms.ComboBox();
             this.teachertxt = new System.Windows.Forms.ComboBox();
             this.feestxt = new System.Windows.Forms.TextBox();
@@ -50,7 +50,6 @@ namespace student_management_system
             this.label11 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.contacttxt = new System.Windows.Forms.TextBox();
             this.star2 = new System.Windows.Forms.Label();
             this.star1 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
@@ -63,6 +62,7 @@ namespace student_management_system
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.contacttxt = new System.Windows.Forms.MaskedTextBox();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -94,7 +94,7 @@ namespace student_management_system
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel4.Controls.Add(this.button8);
+            this.panel4.Controls.Add(this.btnsubmit);
             this.panel4.Controls.Add(this.yeartxt);
             this.panel4.Controls.Add(this.teachertxt);
             this.panel4.Controls.Add(this.feestxt);
@@ -115,20 +115,20 @@ namespace student_management_system
             this.panel4.Size = new System.Drawing.Size(468, 265);
             this.panel4.TabIndex = 8;
             // 
-            // button8
+            // btnsubmit
             // 
-            this.button8.BackColor = System.Drawing.Color.Teal;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(321, 188);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(103, 36);
-            this.button8.TabIndex = 14;
-            this.button8.Text = "SUBMIT";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.btnsubmit.BackColor = System.Drawing.Color.Teal;
+            this.btnsubmit.FlatAppearance.BorderSize = 0;
+            this.btnsubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsubmit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsubmit.ForeColor = System.Drawing.Color.White;
+            this.btnsubmit.Location = new System.Drawing.Point(321, 188);
+            this.btnsubmit.Name = "btnsubmit";
+            this.btnsubmit.Size = new System.Drawing.Size(103, 36);
+            this.btnsubmit.TabIndex = 14;
+            this.btnsubmit.Text = "SUBMIT";
+            this.btnsubmit.UseVisualStyleBackColor = false;
+            this.btnsubmit.Click += new System.EventHandler(this.button8_Click);
             // 
             // yeartxt
             // 
@@ -148,6 +148,7 @@ namespace student_management_system
             // 
             // feestxt
             // 
+            this.feestxt.Enabled = false;
             this.feestxt.Location = new System.Drawing.Point(302, 37);
             this.feestxt.Name = "feestxt";
             this.feestxt.Size = new System.Drawing.Size(121, 20);
@@ -287,19 +288,12 @@ namespace student_management_system
             this.panel3.Size = new System.Drawing.Size(468, 265);
             this.panel3.TabIndex = 7;
             // 
-            // contacttxt
-            // 
-            this.contacttxt.Location = new System.Drawing.Point(314, 26);
-            this.contacttxt.Name = "contacttxt";
-            this.contacttxt.Size = new System.Drawing.Size(111, 20);
-            this.contacttxt.TabIndex = 2;
-            // 
             // star2
             // 
             this.star2.AutoSize = true;
             this.star2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.star2.ForeColor = System.Drawing.Color.Red;
-            this.star2.Location = new System.Drawing.Point(429, 31);
+            this.star2.Location = new System.Drawing.Point(442, 31);
             this.star2.Name = "star2";
             this.star2.Size = new System.Drawing.Size(15, 20);
             this.star2.TabIndex = 12;
@@ -344,6 +338,7 @@ namespace student_management_system
             // emailtxt
             // 
             this.emailtxt.Location = new System.Drawing.Point(73, 69);
+            this.emailtxt.MaxLength = 50;
             this.emailtxt.Name = "emailtxt";
             this.emailtxt.Size = new System.Drawing.Size(163, 20);
             this.emailtxt.TabIndex = 3;
@@ -354,6 +349,7 @@ namespace student_management_system
             this.nametxt.Name = "nametxt";
             this.nametxt.Size = new System.Drawing.Size(163, 20);
             this.nametxt.TabIndex = 0;
+            this.nametxt.TextChanged += new System.EventHandler(this.nametxt_TextChanged);
             // 
             // label9
             // 
@@ -414,6 +410,16 @@ namespace student_management_system
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
+            // contacttxt
+            // 
+            this.contacttxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contacttxt.Location = new System.Drawing.Point(310, 24);
+            this.contacttxt.Mask = "0000-0000000";
+            this.contacttxt.Name = "contacttxt";
+            this.contacttxt.Size = new System.Drawing.Size(126, 22);
+            this.contacttxt.TabIndex = 13;
+            this.contacttxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // frmaddstudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -446,7 +452,7 @@ namespace student_management_system
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnsubmit;
         private System.Windows.Forms.ComboBox yeartxt;
         private System.Windows.Forms.ComboBox teachertxt;
         private System.Windows.Forms.TextBox feestxt;
@@ -463,7 +469,6 @@ namespace student_management_system
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox contacttxt;
         private System.Windows.Forms.Label star2;
         private System.Windows.Forms.Label star1;
         private System.Windows.Forms.Button button9;
@@ -476,5 +481,6 @@ namespace student_management_system
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.MaskedTextBox contacttxt;
     }
 }

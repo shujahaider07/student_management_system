@@ -27,7 +27,7 @@ namespace student_management_system
         {
 
             sql.Open();
-            string qry = "select * from teacher";
+            string qry = "select id,teachername,qualification,subjectt from teacher where status is null ";
             SqlDataAdapter da = new SqlDataAdapter(qry, sql);
             DataTable dt = new DataTable();
             da.Fill(dt);

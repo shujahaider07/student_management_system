@@ -19,6 +19,25 @@ namespace student_management_system
             cnametxt.KeyUp += Cnametxt_KeyUp;
             cfeestxt.KeyUp += Cfeestxt_KeyUp;
             durationtxt.KeyUp += Durationtxt_KeyUp;
+            cfeestxt.KeyPress += Cfeestxt_KeyPress;
+                }
+
+        private void Cfeestxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsControl(e.KeyChar) || char.IsDigit(e.KeyChar))
+            {
+                return;
+                label1.Visible = false;
+            }
+
+            else if (char.IsLetter(e.KeyChar))
+            {
+                label1.Visible = true;
+
+            }
+           
+            
+            e.Handled = true;
         }
 
         private void Durationtxt_KeyUp(object sender, KeyEventArgs e)
@@ -59,24 +78,41 @@ namespace student_management_system
                 MessageBox.Show("record already exists");
 
             }
+            if (cnametxt.Text == "")
+            {
+                MessageBox.Show("fill properly");
+            }
+            else if (cfeestxt.Text == "")
+            {
+                MessageBox.Show("fill properly");
+            }
+            else if (durationtxt.Text == "")
+            {
+                MessageBox.Show("fill properly");
+            }
             else
             {
+                try {
+                    db.con.Open();
+                    string qry = "insert into course(coursename,coursefees,duration)values('" + cnametxt.Text + "','" + cfeestxt.Text + "','" + durationtxt.Text + "')";
+                    SqlCommand cmd = new SqlCommand(qry, db.con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("COURSE ADDED");
+                    db.con.Close();
 
-                db.con.Open();
-                string qry = "insert into course(coursename,coursefees,duration)values('" + cnametxt.Text + "','" + cfeestxt.Text + "','" + durationtxt.Text + "')";
-                SqlCommand cmd = new SqlCommand(qry, db.con);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("COURSE ADDED");
-                db.con.Close();
+                    cnametxt.Text = "";
+                    cfeestxt.Text = "";
+                    durationtxt.Text = "";
 
-                cnametxt.Text = "";
-                cfeestxt.Text = "";
-                durationtxt.Text = "";
+                }
+                catch(Exception)
+                {
 
-            }
-
+                }
+                }
+            
             sql.Close();
-
+                     
             //courses();
 
         }
@@ -85,6 +121,16 @@ namespace student_management_system
         {
             frmcourses f = new frmcourses();
             f.Show();
+        }
+
+        private void frmaddcourse_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cfeestxt_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
